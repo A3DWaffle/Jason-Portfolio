@@ -6,16 +6,14 @@ This is a simple personal portfolio website for Jason Anderson, a Computer Scien
 
 Once GitHub Pages is enabled, the site will be available at a URL like:
 
-`https://A3DWaffle.github.io/jason-portfolio/`
+`https://A3DWaffle.github.io/Jason-Portfolio/`
 
 ## About This Portfolio
 
-The portfolio highlights selected programming and game-related work, including:
+The portfolio highlights selected game-related programming and tooling work, including:
 
 - Expanding Fronts AI Tools, a published Visual Studio Code extension
 - Expanding Fronts / Star Wars: Galactic Battlegrounds AI scripting work
-- College Planner website project
-- Bazaar of Wonders ASP.NET Core MVC project
 
 ## Technologies Used
 
@@ -35,7 +33,7 @@ No build tools, npm install, or server setup are required.
 ## Future Improvements
 
 - Add screenshots for projects
-- Add live links for coursework projects
 - Add a downloadable resume
 - Add a dedicated project page for Expanding Fronts AI scripting
+- Add public EF AI examples once the repository is ready
 - Improve GitHub repository links once more projects are public
