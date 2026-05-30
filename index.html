@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jason Anderson | Portfolio</title>
   <style>
+    :root {
+      --bg: #07120b;
+      --panel: #0f1f14;
+      --panel-dark: #061008;
+      --text: #f8f7f2;
+      --muted: #cbd5c0;
+      --green: #22c55e;
+      --green-soft: rgba(34, 197, 94, 0.12);
+      --orange: #f97316;
+      --orange-soft: rgba(249, 115, 22, 0.14);
+      --border: #24452d;
+      --border-bright: rgba(34, 197, 94, 0.4);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -17,24 +31,44 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #0f172a;
-      color: #f8fafc;
+      background:
+        radial-gradient(circle at top left, rgba(249, 115, 22, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.13), transparent 32%),
+        var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.025),
+        rgba(255, 255, 255, 0.025) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+      opacity: 0.18;
+      z-index: 10;
+    }
+
     a {
-      color: #38bdf8;
+      color: var(--green);
       text-decoration: none;
     }
 
     a:hover {
+      color: var(--orange);
       text-decoration: underline;
     }
 
     .page {
-      width: min(1100px, 92%);
+      width: min(1120px, 92%);
       margin: 0 auto;
-      padding: 24px 0 40px;
+      padding: 24px 0 42px;
     }
 
     header {
@@ -42,18 +76,23 @@
       justify-content: space-between;
       align-items: center;
       gap: 20px;
-      padding: 18px 0;
-      border-bottom: 1px solid #334155;
-      margin-bottom: 64px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      background: rgba(6, 16, 8, 0.74);
+      border-radius: 18px;
+      margin-bottom: 58px;
+      box-shadow: 0 0 30px rgba(34, 197, 94, 0.08);
     }
 
     .name {
       font-size: 1.35rem;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      color: var(--text);
     }
 
     .subtitle {
-      color: #cbd5e1;
+      color: var(--muted);
       font-size: 0.95rem;
     }
 
@@ -61,37 +100,41 @@
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
+      font-size: 0.94rem;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
+      grid-template-columns: 1.25fr 0.75fr;
       gap: 36px;
       align-items: center;
-      margin-bottom: 72px;
+      margin-bottom: 56px;
     }
 
     .tagline {
       display: inline-block;
-      color: #67e8f9;
-      background: rgba(34, 211, 238, 0.12);
-      border: 1px solid rgba(34, 211, 238, 0.3);
+      color: #bbf7d0;
+      background: var(--green-soft);
+      border: 1px solid var(--border-bright);
       padding: 8px 12px;
       border-radius: 999px;
       font-size: 0.9rem;
       margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
     }
 
     h1 {
-      font-size: clamp(2.4rem, 6vw, 4.5rem);
-      line-height: 1.05;
+      font-size: clamp(2.4rem, 6vw, 4.65rem);
+      line-height: 1.04;
       margin-bottom: 20px;
+      max-width: 850px;
     }
 
     .hero p {
-      color: #cbd5e1;
+      color: var(--muted);
       font-size: 1.08rem;
-      max-width: 700px;
+      max-width: 720px;
     }
 
     .buttons {
@@ -105,41 +148,72 @@
       display: inline-block;
       padding: 11px 16px;
       border-radius: 10px;
-      font-weight: 700;
-      border: 1px solid #475569;
+      font-weight: 800;
+      border: 1px solid var(--border);
+      text-decoration: none;
+    }
+
+    .button:hover {
+      text-decoration: none;
     }
 
     .button.primary {
-      background: #38bdf8;
-      color: #020617;
-      border-color: #38bdf8;
+      background: var(--orange);
+      color: var(--bg);
+      border-color: var(--orange);
     }
 
     .button.secondary {
-      color: #f8fafc;
+      color: var(--text);
+      background: rgba(15, 31, 20, 0.82);
     }
 
-    .info-card {
-      background: #111827;
-      border: 1px solid #334155;
+    .hud-card,
+    .project-card,
+    .panel,
+    .featured {
+      position: relative;
+      background: linear-gradient(145deg, rgba(15, 31, 20, 0.94), rgba(6, 16, 8, 0.95));
+      border: 1px solid var(--border);
       border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28), inset 0 0 18px rgba(34, 197, 94, 0.03);
+      overflow: hidden;
+    }
+
+    .hud-card::before,
+    .project-card::before,
+    .panel::before,
+    .featured::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 72px;
+      height: 3px;
+      background: var(--orange);
+    }
+
+    .hud-card {
       padding: 24px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
     }
 
     .terminal {
       font-family: Consolas, Monaco, monospace;
-      background: #020617;
-      border: 1px solid #1e293b;
+      background: var(--panel-dark);
+      border: 1px solid var(--border);
       border-radius: 14px;
       padding: 18px;
-      color: #cbd5e1;
+      color: var(--muted);
       margin-bottom: 18px;
       font-size: 0.9rem;
     }
 
     .terminal .command {
-      color: #67e8f9;
+      color: var(--orange);
+    }
+
+    .terminal .ok {
+      color: var(--green);
     }
 
     .skill-list {
@@ -150,33 +224,67 @@
 
     .skill-list span {
       display: block;
-      background: #020617;
-      border: 1px solid #1e293b;
+      background: rgba(6, 16, 8, 0.86);
+      border: 1px solid var(--border);
       padding: 10px;
       border-radius: 10px;
-      color: #e2e8f0;
+      color: var(--text);
       font-size: 0.92rem;
     }
 
     section {
-      margin-bottom: 64px;
+      margin-bottom: 58px;
     }
 
     .section-heading {
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .section-heading p {
-      color: #67e8f9;
+      color: var(--orange);
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.16em;
       font-size: 0.8rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 6px;
     }
 
     h2 {
       font-size: 2rem;
+    }
+
+    .featured {
+      padding: 26px;
+      border-color: rgba(249, 115, 22, 0.42);
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.75fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .featured h3 {
+      font-size: 1.75rem;
+      margin-bottom: 8px;
+    }
+
+    .featured p,
+    .project-card p,
+    .panel p,
+    .panel li {
+      color: var(--muted);
+    }
+
+    .callout {
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      background: rgba(34, 197, 94, 0.08);
+      border-radius: 14px;
+      padding: 16px;
+      color: var(--text);
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.92rem;
     }
 
     .projects {
@@ -186,9 +294,6 @@
     }
 
     .project-card {
-      background: #111827;
-      border: 1px solid #334155;
-      border-radius: 18px;
       padding: 22px;
     }
 
@@ -198,48 +303,35 @@
     }
 
     .project-type {
-      color: #94a3b8;
+      color: #fbd0aa;
       font-size: 0.92rem;
       margin-bottom: 14px;
-    }
-
-    .project-card p {
-      color: #cbd5e1;
-      margin-bottom: 16px;
     }
 
     .tech {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 16px;
+      margin: 16px 0;
     }
 
     .tech span {
-      background: #020617;
-      border: 1px solid #1e293b;
+      background: var(--panel-dark);
+      border: 1px solid var(--border);
       border-radius: 999px;
       padding: 5px 9px;
       font-size: 0.82rem;
-      color: #e2e8f0;
+      color: var(--text);
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1.4fr 0.6fr;
+      grid-template-columns: 1.35fr 0.65fr;
       gap: 18px;
     }
 
     .panel {
-      background: #111827;
-      border: 1px solid #334155;
-      border-radius: 18px;
       padding: 22px;
-    }
-
-    .panel p,
-    .panel li {
-      color: #cbd5e1;
     }
 
     .panel ul {
@@ -249,15 +341,18 @@
 
     footer {
       text-align: center;
-      color: #94a3b8;
-      border-top: 1px solid #334155;
-      padding-top: 24px;
+      color: #aebfa7;
+      border: 1px solid var(--border);
+      background: rgba(6, 16, 8, 0.74);
+      border-radius: 18px;
+      padding: 20px;
       font-size: 0.95rem;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 850px) {
       header,
       .hero,
+      .featured-grid,
       .about-grid {
         grid-template-columns: 1fr;
       }
@@ -281,9 +376,10 @@
     <header>
       <div>
         <div class="name">Jason Anderson</div>
-        <div class="subtitle">Computer Science Student • Developer • Game AI Scripter</div>
+        <div class="subtitle">A3DWaffle • Computer Science Student • Game AI Scripter</div>
       </div>
       <nav>
+        <a href="#featured">Featured</a>
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
         <a href="https://marketplace.visualstudio.com/items?itemName=A3DWaffle.ef-ai-tools" target="_blank">AI Tool</a>
@@ -295,24 +391,25 @@
     <main>
       <section class="hero">
         <div>
-          <span class="tagline">Building developer tools and game AI systems.</span>
-          <h1>I create practical software with a game-development edge.</h1>
+          <span class="tagline">Retro terminal • Arcade cabinet • Strategy HUD</span>
+          <h1>I build tools and AI scripts for strategy games and modding workflows.</h1>
           <p>
-            I’m a Computer Science student interested in programming, game design, and tools that make development easier. My work focuses on AI scripting, developer tooling, and game-related programming for Star Wars: Galactic Battlegrounds and Expanding Fronts.
+            I’m a Computer Science student interested in programming, game design, and practical tools that make development easier. My current work focuses on AI scripting, developer tooling, and game-related programming for Star Wars: Galactic Battlegrounds and Expanding Fronts.
           </p>
           <div class="buttons">
-            <a class="button primary" href="#projects">View Projects</a>
+            <a class="button primary" href="#featured">View Featured Work</a>
             <a class="button secondary" href="mailto:JacekAnderson@gmail.com">Contact Me</a>
           </div>
         </div>
 
-        <aside class="info-card">
+        <aside class="hud-card">
           <div class="terminal">
-            <p class="command">&gt; profile.load()</p>
-            <p>Name: Jason Anderson</p>
-            <p>Focus: Computer Science</p>
-            <p>Interests: Game AI, developer tools, modding</p>
-            <p>Status: Building portfolio</p>
+            <p class="command">&gt; boot_portfolio.exe</p>
+            <p class="ok">SYSTEM READY</p>
+            <p>Handle: A3DWaffle</p>
+            <p>Focus: Game AI + tooling</p>
+            <p>Mode: Portfolio build</p>
+            <p>Status: Online</p>
           </div>
           <div class="skill-list">
             <span>SWGB / Expanding Fronts AI Scripting</span>
@@ -321,6 +418,37 @@
             <span>Game Balance and Debugging</span>
           </div>
         </aside>
+      </section>
+
+      <section id="featured">
+        <div class="section-heading">
+          <p>Featured Project</p>
+          <h2>Expanding Fronts AI Tools</h2>
+        </div>
+        <div class="featured">
+          <div class="featured-grid">
+            <div>
+              <h3>Published VS Code extension for SWGB / EF AI scripting</h3>
+              <p>
+                Expanding Fronts AI Tools adds editor support for Star Wars: Galactic Battlegrounds and Expanding Fronts AI script files. The extension helps make a niche scripting workflow cleaner by adding syntax highlighting, completions, hover documentation, signature help, rule folding, outline support, and basic diagnostics.
+              </p>
+              <div class="tech">
+                <span>VS Code Extension</span>
+                <span>AI Scripting</span>
+                <span>Developer Tooling</span>
+                <span>Modding Workflow</span>
+              </div>
+              <a class="button primary" href="https://marketplace.visualstudio.com/items?itemName=A3DWaffle.ef-ai-tools" target="_blank">View Marketplace Page</a>
+            </div>
+            <div class="callout">
+              <p>&gt; analyzing script...</p>
+              <p>&gt; loading completions...</p>
+              <p>&gt; hover docs enabled</p>
+              <p>&gt; outline generated</p>
+              <p>&gt; diagnostics online</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="projects">
@@ -334,13 +462,13 @@
             <h3>Expanding Fronts AI Tools</h3>
             <div class="project-type">Published Visual Studio Code Extension</div>
             <p>
-              A Visual Studio Code extension for Star Wars: Galactic Battlegrounds and Expanding Fronts AI scripting. It adds syntax highlighting, completions, hover documentation, signature help, rule folding, outline support, and basic diagnostics for AI script files.
+              A Visual Studio Code extension for Star Wars: Galactic Battlegrounds and Expanding Fronts AI scripting. It improves the scripting workflow with editor support designed for the mod’s AI files.
             </p>
             <div class="tech">
               <span>VS Code Extension</span>
-              <span>JavaScript/TypeScript</span>
               <span>JSON</span>
               <span>AI Scripting</span>
+              <span>Tooling</span>
             </div>
             <a href="https://marketplace.visualstudio.com/items?itemName=A3DWaffle.ef-ai-tools" target="_blank">View extension</a>
           </article>
@@ -357,7 +485,7 @@
               <span>Game Balance</span>
               <span>Debugging</span>
             </div>
-            <a href="https://github.com/A3DWaffle?tab=repositories" target="_blank">GitHub coming soon</a>
+            <a href="https://github.com/A3DWaffle?tab=repositories" target="_blank">Public examples coming soon</a>
           </article>
         </div>
       </section>
@@ -388,7 +516,7 @@
     </main>
 
     <footer>
-      <p>Jason Anderson • Computer Science Student • A3DWaffle</p>
+      <p>Jason Anderson • A3DWaffle • Computer Science Student</p>
       <p>Email: <a href="mailto:JacekAnderson@gmail.com">JacekAnderson@gmail.com</a></p>
     </footer>
   </div>
