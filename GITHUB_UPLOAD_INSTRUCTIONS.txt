@@ -1,24 +1,29 @@
-GitHub Repo Upload Instructions
-================================
+GitHub Repo Update Instructions
+===============================
 
 Recommended repo name:
-jason-portfolio
+Jason-Portfolio
 
-Easy GitHub website steps:
-1. Go to https://github.com/new
-2. Repository name: jason-portfolio
-3. Set it to Public
-4. Check "Add a README file" only if you are NOT uploading this README.md.
-   If you upload this whole folder, you do not need GitHub to make one.
-5. Create the repository.
-6. Click "Add file" -> "Upload files".
-7. Upload these files:
-   - index.html
-   - README.md
-   - .gitignore
-8. Click "Commit changes".
+Files in this package:
+- index.html
+- README.md
+- .gitignore
+- GITHUB_UPLOAD_INSTRUCTIONS.txt
 
-Turn on GitHub Pages:
+To upload these files to a new repo:
+1. Open the GitHub repository.
+2. Click "Add file".
+3. Click "Upload files".
+4. Drag in the files from this folder.
+5. Click "Commit changes".
+
+To update files after they already exist:
+1. Open the file on GitHub, such as index.html.
+2. Click the pencil icon to edit.
+3. Paste the updated file contents.
+4. Click "Commit changes".
+
+To turn on GitHub Pages:
 1. Open the repository on GitHub.
 2. Go to Settings.
 3. Click Pages in the left sidebar.
@@ -28,6 +33,6 @@ Turn on GitHub Pages:
 7. Click Save.
 
 Your site should appear at a URL like:
-https://A3DWaffle.github.io/jason-portfolio/
+https://A3DWaffle.github.io/Jason-Portfolio/
 
 It may take a minute or two for the site to appear after enabling Pages.
