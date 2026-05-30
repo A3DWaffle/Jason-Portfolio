@@ -1,0 +1,33 @@
+GitHub Repo Upload Instructions
+================================
+
+Recommended repo name:
+jason-portfolio
+
+Easy GitHub website steps:
+1. Go to https://github.com/new
+2. Repository name: jason-portfolio
+3. Set it to Public
+4. Check "Add a README file" only if you are NOT uploading this README.md.
+   If you upload this whole folder, you do not need GitHub to make one.
+5. Create the repository.
+6. Click "Add file" -> "Upload files".
+7. Upload these files:
+   - index.html
+   - README.md
+   - .gitignore
+8. Click "Commit changes".
+
+Turn on GitHub Pages:
+1. Open the repository on GitHub.
+2. Go to Settings.
+3. Click Pages in the left sidebar.
+4. Under "Build and deployment", set Source to "Deploy from a branch".
+5. Branch: main
+6. Folder: /root
+7. Click Save.
+
+Your site should appear at a URL like:
+https://A3DWaffle.github.io/jason-portfolio/
+
+It may take a minute or two for the site to appear after enabling Pages.
