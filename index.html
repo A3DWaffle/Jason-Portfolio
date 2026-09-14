@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jason Anderson's portfolio of web development, developer tooling, and real-time strategy game AI projects." />
+  <meta name="description" content="Jason Anderson's portfolio of software development, web development, developer tools, and real-time strategy game AI projects." />
   <title>Jason Anderson | Portfolio</title>
+
   <style>
     :root {
       --bg: #07120b;
@@ -15,7 +16,6 @@
       --green: #22c55e;
       --green-soft: rgba(34, 197, 94, 0.12);
       --orange: #f97316;
-      --orange-soft: rgba(249, 115, 22, 0.14);
       --border: #24452d;
       --border-bright: rgba(34, 197, 94, 0.4);
     }
@@ -158,7 +158,10 @@
       font-weight: 800;
       border: 1px solid var(--border);
       text-decoration: none;
-      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+      transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        background 160ms ease;
     }
 
     .button:hover {
@@ -182,10 +185,16 @@
     .panel,
     .featured {
       position: relative;
-      background: linear-gradient(145deg, rgba(15, 31, 20, 0.94), rgba(6, 16, 8, 0.95));
+      background: linear-gradient(
+        145deg,
+        rgba(15, 31, 20, 0.94),
+        rgba(6, 16, 8, 0.95)
+      );
       border: 1px solid var(--border);
       border-radius: 18px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28), inset 0 0 18px rgba(34, 197, 94, 0.03);
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.28),
+        inset 0 0 18px rgba(34, 197, 94, 0.03);
       overflow: hidden;
     }
 
@@ -304,13 +313,18 @@
 
     .project-card {
       padding: 22px;
-      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease;
     }
 
     .project-card:hover {
       transform: translateY(-4px);
       border-color: var(--border-bright);
-      box-shadow: 0 22px 44px rgba(0, 0, 0, 0.32), inset 0 0 18px rgba(34, 197, 94, 0.04);
+      box-shadow:
+        0 22px 44px rgba(0, 0, 0, 0.32),
+        inset 0 0 18px rgba(34, 197, 94, 0.04);
     }
 
     .project-card h3 {
@@ -382,7 +396,7 @@
     }
 
     .arcade-preview::after {
-      content: "OPEN CASE STUDY  →";
+      content: "OPEN CASE STUDY →";
       position: absolute;
       right: 14px;
       bottom: 14px;
@@ -408,7 +422,11 @@
     }
 
     .skill-card {
-      background: linear-gradient(145deg, rgba(15, 31, 20, 0.94), rgba(6, 16, 8, 0.95));
+      background: linear-gradient(
+        145deg,
+        rgba(15, 31, 20, 0.94),
+        rgba(6, 16, 8, 0.95)
+      );
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 18px;
@@ -431,7 +449,11 @@
       gap: 24px;
       align-items: center;
       padding: 22px;
-      background: linear-gradient(145deg, rgba(15, 31, 20, 0.94), rgba(6, 16, 8, 0.95));
+      background: linear-gradient(
+        145deg,
+        rgba(15, 31, 20, 0.94),
+        rgba(6, 16, 8, 0.95)
+      );
       border: 1px solid var(--border);
       border-radius: 18px;
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
@@ -538,13 +560,17 @@
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <header>
       <div>
         <div class="name">Jason Anderson</div>
-        <div class="subtitle">A3DWaffle • Computer Science Student • Web Developer • Game AI Scripter</div>
+        <div class="subtitle">
+          A3DWaffle • Computer Science Student • Software Developer • Game AI Scripter
+        </div>
       </div>
+
       <nav>
         <a href="#featured">Featured</a>
         <a href="#web-project">Web Project</a>
@@ -552,8 +578,8 @@
         <a href="#skills">Skills</a>
         <a href="#interview">Interview</a>
         <a href="#about">About</a>
-        <a href="https://marketplace.visualstudio.com/items?itemName=A3DWaffle.ef-ai-tools" target="_blank">AI Tool</a>
-        <a href="https://github.com/A3DWaffle/Expanding-Fronts-AI" target="_blank">AI Repo</a>
+        <a href="https://marketplace.visualstudio.com/items?itemName=A3DWaffle.ef-ai-tools" target="_blank" rel="noopener noreferrer">AI Tool</a>
+        <a href="https://github.com/A3DWaffle/Expanding-Fronts-AI" target="_blank" rel="noopener noreferrer">AI Repo</a>
         <a href="mailto:JacekAnderson@gmail.com">Contact</a>
       </nav>
     </header>
@@ -561,14 +587,21 @@
     <main>
       <section class="hero">
         <div>
-          <span class="tagline">Web Development • RTS Game AI • Developer Tools</span>
+          <span class="tagline">
+            Software Development • Web Development • RTS Game AI
+          </span>
+
           <h1>I build practical software with a game-development edge.</h1>
+
           <p>
-            I’m a Computer Science student building responsive websites, ASP.NET Core applications, developer tools, and game AI systems. My work combines structured problem-solving with the creative side of software and game development.
+            I’m a Computer Science student who builds websites, software tools,
+            and computer-player AI for strategy games. I enjoy solving practical
+            problems and giving each project a clear, distinctive style.
           </p>
+
           <div class="buttons">
             <a class="button primary" href="#featured">View Featured Work</a>
-            <a class="button secondary" href="https://github.com/A3DWaffle/Expanding-Fronts-AI" target="_blank">View AI Repository</a>
+            <a class="button secondary" href="https://github.com/A3DWaffle/Expanding-Fronts-AI" target="_blank" rel="noopener noreferrer">View AI Repository</a>
           </div>
         </div>
 
@@ -577,10 +610,11 @@
             <p class="command">&gt; boot_portfolio.exe</p>
             <p class="ok">SYSTEM READY</p>
             <p>Handle: A3DWaffle</p>
-            <p>Focus: Web development + RTS AI</p>
-            <p>Role: Student developer</p>
-            <p>Status: Open to junior web roles</p>
+            <p>Focus: Software development + game AI</p>
+            <p>Role: Computer Science student</p>
+            <p>Status: Open to programming and computer science opportunities</p>
           </div>
+
           <div class="skill-list">
             <span>SWGB / Expanding Fronts AI Scripting</span>
             <span>Rule-Based AI Logic</span>
@@ -595,27 +629,35 @@
           <p>Featured Project</p>
           <h2>Expanding Fronts AI Tools</h2>
         </div>
+
         <div class="featured">
           <div class="featured-grid">
             <div>
               <h3>Published VS Code extension for SWGB / EF AI scripting</h3>
+
               <p>
-                Expanding Fronts AI Tools adds editor support for Star Wars: Galactic Battlegrounds and Expanding Fronts AI script files. The extension helps make a niche scripting workflow cleaner by adding syntax highlighting, completions, hover documentation, signature help, rule folding, outline support, and basic diagnostics.
+                Expanding Fronts AI Tools makes the mod’s scripting files easier
+                to write and understand in VS Code. It highlights commands,
+                suggests valid options, explains them as you work, organizes
+                large files, and warns about common mistakes.
               </p>
+
               <div class="tech">
                 <span>VS Code Extension</span>
                 <span>AI Scripting</span>
-                <span>Developer Tooling</span>
+                <span>Developer Tools</span>
                 <span>Expanding Fronts</span>
               </div>
-              <a class="button primary" href="https://marketplace.visualstudio.com/items?itemName=A3DWaffle.ef-ai-tools" target="_blank">View Marketplace Page</a>
+
+              <a class="button primary" href="https://marketplace.visualstudio.com/items?itemName=A3DWaffle.ef-ai-tools" target="_blank" rel="noopener noreferrer">View Marketplace Page</a>
             </div>
+
             <div class="callout">
               <p>&gt; analyzing script...</p>
-              <p>&gt; loading completions...</p>
-              <p>&gt; hover docs enabled</p>
+              <p>&gt; loading suggestions...</p>
+              <p>&gt; command explanations enabled</p>
               <p>&gt; outline generated</p>
-              <p>&gt; diagnostics online</p>
+              <p>&gt; error checking online</p>
             </div>
           </div>
         </div>
@@ -626,26 +668,38 @@
           <p>Featured Web Project</p>
           <h2>Quarter Quest Arcade</h2>
         </div>
+
         <div class="featured arcade-feature">
           <div class="arcade-grid">
             <div>
-              <h3>A complete arcade-themed ASP.NET Core MVC application</h3>
+              <h3>An arcade-themed website built with C# and ASP.NET Core</h3>
+
               <p>
-                Quarter Quest Arcade is a playful, 1990s-inspired website built around a catalog of six original fictional games. The application uses controllers, a game model, Razor views, reusable navigation, and a data-driven loop to render the catalog in a responsive interface.
+                Quarter Quest Arcade is a playful, 1990s-inspired website
+                featuring six original fictional games. Visitors can browse the
+                catalog, open individual game pages, search and sort titles, save
+                favorites, and leave ratings.
               </p>
+
               <div class="tech">
                 <span>C#</span>
                 <span>ASP.NET Core MVC</span>
                 <span>Razor</span>
                 <span>HTML/CSS</span>
-                <span>Responsive Design</span>
+                <span>JavaScript</span>
               </div>
-              <p>The project demonstrates both application structure and visual design within one cohesive theme.</p>
+
+              <p>
+                Behind the arcade theme, C# organizes the game information and
+                JavaScript powers the interactive features.
+              </p>
+
               <div class="buttons">
                 <a class="button primary" href="quarter-quest.html">Explore Project</a>
                 <a class="button secondary" href="QuarterQuestArcade-source.zip" download>Download Source</a>
               </div>
             </div>
+
             <a class="arcade-preview" href="quarter-quest.html" aria-label="Open the Quarter Quest Arcade case study">
               <img src="arcade-banner.png" alt="Quarter Quest Arcade artwork with a neon arcade cabinet" />
             </a>
@@ -663,31 +717,41 @@
           <article class="project-card">
             <h3>Expanding Fronts AI Tools</h3>
             <div class="project-type">Published Visual Studio Code Extension</div>
+
             <p>
-              A Visual Studio Code extension for Star Wars: Galactic Battlegrounds and Expanding Fronts AI scripting. It improves the scripting workflow with editor support designed for the mod’s AI files.
+              A Visual Studio Code extension that makes Expanding Fronts AI
+              scripts easier to write, understand, organize, and troubleshoot.
             </p>
+
             <div class="tech">
               <span>VS Code Extension</span>
               <span>JSON</span>
               <span>AI Scripting</span>
-              <span>Tooling</span>
+              <span>Developer Tools</span>
             </div>
-            <a href="https://marketplace.visualstudio.com/items?itemName=A3DWaffle.ef-ai-tools" target="_blank">View extension</a>
+
+            <a href="https://marketplace.visualstudio.com/items?itemName=A3DWaffle.ef-ai-tools" target="_blank" rel="noopener noreferrer">View extension</a>
           </article>
 
           <article class="project-card">
             <h3>Expanding Fronts AI Scripting</h3>
-            <div class="project-type">RTS AI / Modding Project</div>
+            <div class="project-type">Strategy Game AI and Modding</div>
+
             <p>
-              A public repository of prototype RTS AI scripts for Star Wars: Galactic Battlegrounds and the Expanding Fronts mod. The project includes rule-based AI behavior, AI constants, military population logic, faction support, and documentation for the scripting files.
+              A public collection of experimental computer-player scripts for
+              Star Wars: Galactic Battlegrounds and Expanding Fronts. The work
+              covers military decisions, faction behavior, population management,
+              game balance, and supporting documentation.
             </p>
+
             <div class="tech">
               <span>RTS AI</span>
               <span>Rule-Based Logic</span>
               <span>Game Balance</span>
               <span>Documentation</span>
             </div>
-            <a href="https://github.com/A3DWaffle/Expanding-Fronts-AI" target="_blank">View repository</a>
+
+            <a href="https://github.com/A3DWaffle/Expanding-Fronts-AI" target="_blank" rel="noopener noreferrer">View repository</a>
           </article>
         </div>
       </section>
@@ -695,24 +759,39 @@
       <section id="skills">
         <div class="section-heading">
           <p>Capabilities</p>
-          <h2>Web &amp; Development Skills</h2>
+          <h2>What I Work With</h2>
         </div>
+
         <div class="skills-grid">
           <article class="skill-card">
             <h3>Front End</h3>
-            <p>Semantic HTML, responsive CSS, JavaScript, accessible layouts, and clear visual hierarchy.</p>
+            <p>
+              I build pages that adapt to desktop and mobile screens, with clear
+              layouts and straightforward navigation.
+            </p>
           </article>
+
           <article class="skill-card">
             <h3>Back End</h3>
-            <p>C#, .NET, ASP.NET Core MVC, Razor views, routing, models, and basic API development.</p>
+            <p>
+              I use C# and ASP.NET Core to organize application logic, connect
+              pages, and handle user requests.
+            </p>
           </article>
+
           <article class="skill-card">
             <h3>Data</h3>
-            <p>SQL Server, relational database design, queries, joins, constraints, and analytical functions.</p>
+            <p>
+              I use SQL Server to store, organize, and retrieve application data.
+            </p>
           </article>
+
           <article class="skill-card">
-            <h3>Tooling</h3>
-            <p>GitHub, Visual Studio, VS Code extension development, debugging, documentation, and testing.</p>
+            <h3>Tools</h3>
+            <p>
+              I use GitHub, Visual Studio, and VS Code to build, test, explain,
+              and maintain projects.
+            </p>
           </article>
         </div>
       </section>
@@ -722,6 +801,7 @@
           <p>Featured Media</p>
           <h2>Developer Interview</h2>
         </div>
+
         <div class="media-card">
           <div class="video-wrap">
             <iframe
@@ -733,12 +813,17 @@
               allowfullscreen>
             </iframe>
           </div>
+
           <div class="media-copy">
             <div class="eyebrow">Star Wars Gaming Roundtable</div>
             <h3>Discussing Expanding Fronts development</h3>
+
             <p>
-              In this roundtable, I represent Expanding Fronts and talk about the mod, my role developing its computer-player AI, and the work involved in expanding a classic real-time strategy game.
+              In this roundtable, I represent Expanding Fronts and talk about the
+              mod, my role developing its computer-player AI, and the work
+              involved in expanding a classic real-time strategy game.
             </p>
+
             <a class="button secondary" href="https://www.youtube.com/watch?v=nD-_cIX9Djw" target="_blank" rel="noopener noreferrer">Open on YouTube</a>
           </div>
         </div>
@@ -753,16 +838,23 @@
         <div class="about-grid">
           <div class="panel">
             <p>
-              I’m a Computer Science student focused on web development, programming, game design, and practical developer tools. My projects range from responsive websites and ASP.NET Core applications to Star Wars: Galactic Battlegrounds and Expanding Fronts AI scripting, where I work with rule-based logic, faction behavior, scripting organization, and tools that make development easier to manage.
+              I’m a Computer Science student who enjoys building useful software
+              with a strong visual identity. My work includes websites, ASP.NET
+              Core applications, a published VS Code extension, and
+              computer-player AI for Expanding Fronts. I’m open to programming
+              and computer science opportunities where I can keep learning and
+              contribute practical solutions.
             </p>
           </div>
+
           <div class="panel">
             <h3>Areas of Focus</h3>
+
             <ul>
-              <li>Responsive front-end web development</li>
-              <li>ASP.NET Core MVC applications</li>
-              <li>Real-time strategy game AI scripting</li>
-              <li>Developer tools for AI scripting</li>
+              <li>Websites for desktop and mobile</li>
+              <li>C# and ASP.NET Core applications</li>
+              <li>Computer-player behavior for strategy games</li>
+              <li>Tools that make programming easier</li>
             </ul>
           </div>
         </div>
@@ -771,7 +863,10 @@
 
     <footer>
       <p>Jason Anderson • A3DWaffle • Computer Science Student</p>
-      <p>Email: <a href="mailto:JacekAnderson@gmail.com">JacekAnderson@gmail.com</a></p>
+      <p>
+        Email:
+        <a href="mailto:JacekAnderson@gmail.com">JacekAnderson@gmail.com</a>
+      </p>
     </footer>
   </div>
 </body>
