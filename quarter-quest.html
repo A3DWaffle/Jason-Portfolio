@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Quarter Quest Arcade case study — an ASP.NET Core MVC game catalog designed and developed by Jason Anderson." />
+  <meta
+    name="description"
+    content="Quarter Quest Arcade case study — an ASP.NET Core MVC game catalog designed and developed by Jason Anderson."
+  />
   <title>Quarter Quest Arcade | Jason Anderson</title>
+
   <style>
     :root {
       --bg: #07120b;
@@ -19,15 +23,31 @@
       --cyan: #28e8f2;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       line-height: 1.65;
       background:
-        radial-gradient(circle at 12% 0%, rgba(249, 115, 22, 0.16), transparent 28%),
-        radial-gradient(circle at 88% 6%, rgba(34, 197, 94, 0.14), transparent 31%),
+        radial-gradient(
+          circle at 12% 0%,
+          rgba(249, 115, 22, 0.16),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 88% 6%,
+          rgba(34, 197, 94, 0.14),
+          transparent 31%
+        ),
         var(--bg);
     }
 
@@ -38,15 +58,41 @@
       z-index: 10;
       pointer-events: none;
       opacity: 0.14;
-      background: repeating-linear-gradient(to bottom, rgba(255,255,255,.03), rgba(255,255,255,.03) 1px, transparent 1px, transparent 4px);
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.03),
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 4px
+      );
     }
 
-    a { color: var(--green); text-decoration: none; }
-    a:hover { color: var(--orange); text-decoration: underline; }
-    a:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; border-radius: 4px; }
-    img { max-width: 100%; }
+    a {
+      color: var(--green);
+      text-decoration: none;
+    }
 
-    .page { width: min(1120px, 92%); margin: 0 auto; padding: 24px 0 40px; }
+    a:hover {
+      color: var(--orange);
+      text-decoration: underline;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .page {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+      padding: 24px 0 40px;
+    }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -58,8 +104,17 @@
       background: rgba(6, 16, 8, 0.8);
     }
 
-    .identity { color: var(--text); font-weight: 900; font-size: 1.2rem; }
-    nav { display: flex; flex-wrap: wrap; gap: 16px; }
+    .identity {
+      color: var(--text);
+      font-weight: 900;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
 
     .button {
       display: inline-block;
@@ -72,35 +127,64 @@
       transition: transform 160ms ease, border-color 160ms ease;
     }
 
-    .button:hover { transform: translateY(-2px); text-decoration: none; border-color: var(--green); }
-    .button.primary { color: var(--deep); background: var(--orange); border-color: var(--orange); }
+    .button:hover {
+      transform: translateY(-2px);
+      text-decoration: none;
+      border-color: var(--green);
+    }
 
-    .hero { padding: 58px 0 36px; }
+    .button.primary {
+      color: var(--deep);
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .hero {
+      padding: 58px 0 36px;
+    }
+
     .eyebrow {
       display: inline-block;
       margin-bottom: 16px;
       padding: 7px 11px;
-      border: 1px solid rgba(34, 197, 94, .45);
+      border: 1px solid rgba(34, 197, 94, 0.45);
       border-radius: 999px;
       color: #bbf7d0;
-      background: rgba(34, 197, 94, .1);
+      background: rgba(34, 197, 94, 0.1);
       font-family: Consolas, Monaco, monospace;
-      font-size: .84rem;
-      letter-spacing: .08em;
+      font-size: 0.84rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    h1 { max-width: 900px; font-size: clamp(2.7rem, 7vw, 5.3rem); line-height: .98; letter-spacing: -.035em; }
-    .lede { max-width: 760px; margin-top: 20px; color: var(--muted); font-size: 1.1rem; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    h1 {
+      max-width: 900px;
+      font-size: clamp(2.7rem, 7vw, 5.3rem);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+    }
+
+    .lede {
+      max-width: 760px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
 
     .hero-image {
       position: relative;
       overflow: hidden;
-      border: 1px solid rgba(249, 115, 22, .55);
+      border: 1px solid rgba(249, 115, 22, 0.55);
       border-radius: 20px;
       background: var(--deep);
-      box-shadow: 0 25px 70px rgba(0,0,0,.42);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.42);
     }
 
     .hero-image::after {
@@ -111,38 +195,228 @@
       padding: 7px 10px;
       border-radius: 7px;
       color: #fef3c7;
-      background: rgba(6,16,8,.9);
-      font: 700 .75rem Consolas, Monaco, monospace;
-      letter-spacing: .05em;
+      background: rgba(6, 16, 8, 0.9);
+      font: 700 0.75rem Consolas, Monaco, monospace;
+      letter-spacing: 0.05em;
     }
 
-    .hero-image img { display: block; width: 100%; max-height: 570px; object-fit: cover; }
-    section { padding: 48px 0; }
-    .section-label { color: var(--orange); font: 700 .82rem Consolas, Monaco, monospace; letter-spacing: .1em; text-transform: uppercase; }
-    h2 { margin-top: 5px; font-size: clamp(1.85rem, 4vw, 2.8rem); line-height: 1.15; }
-    .section-intro { max-width: 760px; margin-top: 12px; color: var(--muted); }
+    .hero-image img {
+      display: block;
+      width: 100%;
+      max-height: 570px;
+      object-fit: cover;
+    }
 
-    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 25px; }
-    .card, .code-card {
+    section {
+      padding: 48px 0;
+    }
+
+    .section-label {
+      color: var(--orange);
+      font: 700 0.82rem Consolas, Monaco, monospace;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-top: 5px;
+      font-size: clamp(1.85rem, 4vw, 2.8rem);
+      line-height: 1.15;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      margin-top: 12px;
+      color: var(--muted);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 25px;
+    }
+
+    .card,
+    .code-card {
       position: relative;
       overflow: hidden;
       padding: 21px;
       border: 1px solid var(--border);
       border-radius: 16px;
-      background: linear-gradient(145deg, rgba(15,31,20,.95), rgba(6,16,8,.97));
+      background: linear-gradient(
+        145deg,
+        rgba(15, 31, 20, 0.95),
+        rgba(6, 16, 8, 0.97)
+      );
     }
 
-    .card::before, .code-card::before { content: ""; position: absolute; top: 0; left: 0; width: 64px; height: 3px; background: var(--orange); }
-    .card h3 { margin-bottom: 7px; font-size: 1.05rem; }
-    .card p { color: var(--muted); font-size: .94rem; }
+    .card::before,
+    .code-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 64px;
+      height: 3px;
+      background: var(--orange);
+    }
+
+    .card h3 {
+      margin-bottom: 7px;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    /* Interactive preview */
+
+    .demo-shell {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: linear-gradient(
+        145deg,
+        rgba(15, 31, 20, 0.96),
+        rgba(6, 16, 8, 0.98)
+      );
+    }
+
+    .demo-toolbar {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(180px, 0.35fr);
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .demo-toolbar label {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .demo-toolbar input,
+    .demo-toolbar select {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 12px;
+      color: var(--text);
+      background: var(--deep);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      font: inherit;
+    }
+
+    .demo-toolbar input:focus,
+    .demo-toolbar select:focus {
+      outline: 2px solid var(--orange);
+      outline-offset: 2px;
+    }
+
+    .demo-results {
+      margin-bottom: 14px;
+      color: var(--green);
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.84rem;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .demo-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: rgba(6, 16, 8, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+
+    .demo-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--orange);
+    }
+
+    .demo-card[hidden] {
+      display: none;
+    }
+
+    .demo-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .demo-card-body {
+      display: grid;
+      gap: 7px;
+      height: 100%;
+      padding: 13px;
+    }
+
+    .demo-card h3 {
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+
+    .demo-meta {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .demo-rating {
+      color: #fde68a;
+      font-size: 0.86rem;
+    }
+
+    .demo-favorite {
+      align-self: end;
+      justify-self: start;
+      margin-top: 5px;
+      padding: 7px 10px;
+      color: var(--text);
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 800;
+    }
+
+    .demo-favorite:hover {
+      border-color: var(--orange);
+    }
+
+    .demo-favorite[aria-pressed="true"] {
+      color: var(--deep);
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    /* Code explorer */
 
     .code-explorer {
       margin-top: 25px;
       overflow: hidden;
-      border: 1px solid rgba(34,197,94,.42);
+      border: 1px solid rgba(34, 197, 94, 0.42);
       border-radius: 18px;
-      background: linear-gradient(145deg, rgba(15,31,20,.95), rgba(6,16,8,.98));
-      box-shadow: 0 20px 48px rgba(0,0,0,.28);
+      background: linear-gradient(
+        145deg,
+        rgba(15, 31, 20, 0.95),
+        rgba(6, 16, 8, 0.98)
+      );
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
     }
 
     .file-tabs {
@@ -151,7 +425,7 @@
       overflow-x: auto;
       padding: 10px 10px 0;
       border-bottom: 1px solid var(--border);
-      background: rgba(4,10,5,.75);
+      background: rgba(4, 10, 5, 0.75);
     }
 
     .file-tab {
@@ -162,49 +436,127 @@
       border-radius: 9px 9px 0 0;
       color: var(--muted);
       background: transparent;
-      font: 700 .86rem Consolas, Monaco, monospace;
+      font: 700 0.86rem Consolas, Monaco, monospace;
       cursor: pointer;
     }
 
-    .file-tab:hover { color: var(--text); background: rgba(34,197,94,.08); }
-    .file-tab:focus-visible { outline: 3px solid var(--orange); outline-offset: -3px; }
+    .file-tab:hover {
+      color: var(--text);
+      background: rgba(34, 197, 94, 0.08);
+    }
+
+    .file-tab:focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: -3px;
+    }
+
     .file-tab[aria-selected="true"] {
       color: #fef3c7;
       border-color: var(--border);
-      background: rgba(15,31,20,.98);
+      background: rgba(15, 31, 20, 0.98);
       box-shadow: inset 0 3px 0 var(--orange);
     }
 
-    .code-panel { display: none; }
-    .code-panel.active { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); }
-    .code-card { min-width: 0; padding: 0; border: 0; border-radius: 0; background: #040a05; }
-    .code-title { padding: 12px 16px; border-bottom: 1px solid var(--border); color: #bbf7d0; font: 700 .82rem Consolas, Monaco, monospace; }
-    pre { min-height: 390px; overflow: auto; padding: 18px; color: #d9f99d; background: #040a05; font: .84rem/1.55 Consolas, Monaco, monospace; tab-size: 2; }
+    .code-panel {
+      display: none;
+    }
+
+    .code-panel.active {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+    }
+
+    .code-card {
+      min-width: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: #040a05;
+    }
+
+    .code-title {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: #bbf7d0;
+      font: 700 0.82rem Consolas, Monaco, monospace;
+    }
+
+    pre {
+      min-height: 390px;
+      overflow: auto;
+      padding: 18px;
+      color: #d9f99d;
+      background: #040a05;
+      font: 0.84rem/1.55 Consolas, Monaco, monospace;
+      tab-size: 2;
+    }
 
     .code-explanation {
       padding: 24px;
       border-left: 1px solid var(--border);
-      background: rgba(15,31,20,.72);
+      background: rgba(15, 31, 20, 0.72);
     }
 
-    .code-explanation h3 { margin-bottom: 9px; font-size: 1.2rem; }
-    .code-explanation p { color: var(--muted); }
-    .code-explanation ul { margin: 18px 0 0 20px; color: var(--muted); }
-    .code-explanation li + li { margin-top: 8px; }
+    .code-explanation h3 {
+      margin-bottom: 9px;
+      font-size: 1.2rem;
+    }
+
+    .code-explanation p {
+      color: var(--muted);
+    }
+
+    .code-explanation ul {
+      margin: 18px 0 0 20px;
+      color: var(--muted);
+    }
+
+    .code-explanation li + li {
+      margin-top: 8px;
+    }
+
     .takeaway {
       margin-top: 22px;
       padding: 14px;
       border-left: 3px solid var(--orange);
-      background: rgba(249,115,22,.09);
+      background: rgba(249, 115, 22, 0.09);
       color: #fef3c7;
-      font-size: .93rem;
+      font-size: 0.93rem;
     }
 
-    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 25px; }
-    .game-art { overflow: hidden; border: 1px solid var(--border); border-radius: 14px; background: var(--deep); }
-    .game-art img { display: block; width: 100%; aspect-ratio: .76; object-fit: cover; transition: transform 180ms ease; }
-    .game-art:hover img { transform: scale(1.025); }
-    .game-art figcaption { padding: 11px 13px; color: var(--muted); font-size: .9rem; }
+    /* Artwork */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 25px;
+    }
+
+    .game-art {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--deep);
+    }
+
+    .game-art img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 0.76;
+      object-fit: cover;
+      transition: transform 180ms ease;
+    }
+
+    .game-art:hover img {
+      transform: scale(1.025);
+    }
+
+    .game-art figcaption {
+      padding: 11px 13px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
 
     .next-step {
       display: grid;
@@ -212,36 +564,85 @@
       align-items: center;
       gap: 22px;
       padding: 26px;
-      border: 1px solid rgba(34,197,94,.42);
+      border: 1px solid rgba(34, 197, 94, 0.42);
       border-radius: 18px;
-      background: linear-gradient(135deg, rgba(34,197,94,.09), rgba(249,115,22,.09));
+      background: linear-gradient(
+        135deg,
+        rgba(34, 197, 94, 0.09),
+        rgba(249, 115, 22, 0.09)
+      );
     }
 
-    .next-step p { color: var(--muted); }
-    footer { margin-top: 24px; padding: 20px; text-align: center; color: #aebfa7; border: 1px solid var(--border); border-radius: 18px; background: rgba(6,16,8,.75); }
+    .next-step p {
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 24px;
+      padding: 20px;
+      text-align: center;
+      color: #aebfa7;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(6, 16, 8, 0.75);
+    }
 
     @media (max-width: 820px) {
-      .feature-grid, .gallery { grid-template-columns: repeat(2, 1fr); }
-      .code-panel.active { grid-template-columns: 1fr; }
-      .code-explanation { border-top: 1px solid var(--border); border-left: 0; }
+      .feature-grid,
+      .gallery,
+      .demo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .code-panel.active {
+        grid-template-columns: 1fr;
+      }
+
+      .code-explanation {
+        border-top: 1px solid var(--border);
+        border-left: 0;
+      }
     }
 
     @media (max-width: 560px) {
-      header { align-items: flex-start; flex-direction: column; }
-      .feature-grid, .gallery, .next-step { grid-template-columns: 1fr; }
-      .hero { padding-top: 42px; }
-      pre { min-height: 340px; font-size: .76rem; }
-      .file-tab { padding: 9px 11px; }
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .feature-grid,
+      .gallery,
+      .next-step,
+      .demo-grid,
+      .demo-toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      pre {
+        min-height: 340px;
+        font-size: 0.76rem;
+      }
+
+      .file-tab {
+        padding: 9px 11px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <header>
       <a class="identity" href="index.html">Jason Anderson</a>
+
       <nav aria-label="Project navigation">
+        <a href="#demo">Try It</a>
         <a href="#features">Features</a>
-        <a href="#architecture">How it works</a>
+        <a href="#architecture">How It Works</a>
         <a href="#gallery">Artwork</a>
         <a href="index.html">Portfolio</a>
       </nav>
@@ -250,49 +651,370 @@
     <main>
       <section class="hero">
         <span class="eyebrow">Web Design + ASP.NET Core MVC</span>
+
         <h1>Quarter Quest Arcade</h1>
-        <p class="lede">A responsive catalog for six fictional arcade games, built to connect playful 1990s art direction with a clear MVC application structure and useful browser interactions.</p>
+
+        <p class="lede">
+          A colorful 1990s-style website where visitors can browse, search,
+          rate, and favorite six fictional arcade games.
+        </p>
+
         <div class="actions">
-          <a class="button primary" href="QuarterQuestArcade-source.zip" download>Download Source</a>
+          <a class="button primary" href="#demo">Try the Preview</a>
+          <a class="button" href="QuarterQuestArcade-source.zip" download>Download Source</a>
           <a class="button" href="#architecture">Review the Code</a>
           <a class="button" href="index.html">Back to Portfolio</a>
         </div>
       </section>
 
       <div class="hero-image">
-        <img src="arcade-banner.png" alt="Quarter Quest Arcade neon cabinet artwork" />
+        <img
+          src="arcade-banner.png"
+          alt="Quarter Quest Arcade neon cabinet artwork"
+        />
       </div>
 
+      <section id="demo">
+        <p class="section-label">Interactive Preview</p>
+        <h2>Try the arcade catalog</h2>
+
+        <p class="section-intro">
+          Search, sort, and favorite the games below. This lightweight
+          portfolio preview recreates the catalog experience; the downloadable
+          ASP.NET project contains the complete multi-page application.
+        </p>
+
+        <div class="demo-shell">
+          <div class="demo-toolbar">
+            <label>
+              Search games
+              <input
+                id="demoSearch"
+                type="search"
+                placeholder="Try “shooter” or “custard”"
+                autocomplete="off"
+              />
+            </label>
+
+            <label>
+              Sort by
+              <select id="demoSort">
+                <option value="title">Title</option>
+                <option value="year-desc">Newest</option>
+                <option value="rating-desc">Highest rated</option>
+              </select>
+            </label>
+          </div>
+
+          <p class="demo-results" id="demoResults" aria-live="polite">
+            Showing 6 games
+          </p>
+
+          <div class="demo-grid" id="demoGrid">
+            <article
+              class="demo-card"
+              data-title="Laser Lobster IV"
+              data-genre="Space Shooter"
+              data-year="1998"
+              data-rating="4.8"
+            >
+              <img
+                loading="lazy"
+                src="laser-lobster-iv.png"
+                alt="Laser Lobster IV game poster"
+              />
+
+              <div class="demo-card-body">
+                <h3>Laser Lobster IV</h3>
+                <p class="demo-meta">Space Shooter · 1998</p>
+                <p class="demo-rating">★ 4.8</p>
+                <button
+                  class="demo-favorite"
+                  type="button"
+                  data-game="laser-lobster"
+                  aria-pressed="false"
+                >
+                  ♡ Favorite
+                </button>
+              </div>
+            </article>
+
+            <article
+              class="demo-card"
+              data-title="Rocket Gogo Pogo"
+              data-genre="Platformer"
+              data-year="1996"
+              data-rating="4.5"
+            >
+              <img
+                loading="lazy"
+                src="rocket-gogo-pogo.png"
+                alt="Rocket Gogo Pogo game poster"
+              />
+
+              <div class="demo-card-body">
+                <h3>Rocket Gogo Pogo</h3>
+                <p class="demo-meta">Platformer · 1996</p>
+                <p class="demo-rating">★ 4.5</p>
+                <button
+                  class="demo-favorite"
+                  type="button"
+                  data-game="rocket-gogo"
+                  aria-pressed="false"
+                >
+                  ♡ Favorite
+                </button>
+              </div>
+            </article>
+
+            <article
+              class="demo-card"
+              data-title="Brick Battalion"
+              data-genre="Brick Breaker"
+              data-year="1993"
+              data-rating="4.1"
+            >
+              <img
+                loading="lazy"
+                src="brick-battalion.png"
+                alt="Brick Battalion game poster"
+              />
+
+              <div class="demo-card-body">
+                <h3>Brick Battalion</h3>
+                <p class="demo-meta">Brick Breaker · 1993</p>
+                <p class="demo-rating">★ 4.1</p>
+                <button
+                  class="demo-favorite"
+                  type="button"
+                  data-game="brick-battalion"
+                  aria-pressed="false"
+                >
+                  ♡ Favorite
+                </button>
+              </div>
+            </article>
+
+            <article
+              class="demo-card"
+              data-title="Turbo Cruise XL"
+              data-genre="Arcade Racer"
+              data-year="1999"
+              data-rating="4.7"
+            >
+              <img
+                loading="lazy"
+                src="turbo-cruise-xl.png"
+                alt="Turbo Cruise XL game poster"
+              />
+
+              <div class="demo-card-body">
+                <h3>Turbo Cruise XL</h3>
+                <p class="demo-meta">Arcade Racer · 1999</p>
+                <p class="demo-rating">★ 4.7</p>
+                <button
+                  class="demo-favorite"
+                  type="button"
+                  data-game="turbo-cruise"
+                  aria-pressed="false"
+                >
+                  ♡ Favorite
+                </button>
+              </div>
+            </article>
+
+            <article
+              class="demo-card"
+              data-title="Mecha Custodian"
+              data-genre="Puzzle Action"
+              data-year="1997"
+              data-rating="4.3"
+            >
+              <img
+                loading="lazy"
+                src="mecha-custodian.png"
+                alt="Mecha Custodian game poster"
+              />
+
+              <div class="demo-card-body">
+                <h3>Mecha Custodian</h3>
+                <p class="demo-meta">Puzzle Action · 1997</p>
+                <p class="demo-rating">★ 4.3</p>
+                <button
+                  class="demo-favorite"
+                  type="button"
+                  data-game="mecha-custodian"
+                  aria-pressed="false"
+                >
+                  ♡ Favorite
+                </button>
+              </div>
+            </article>
+
+            <article
+              class="demo-card"
+              data-title="Cosmic Custard Commando"
+              data-genre="Action Shooter"
+              data-year="1995"
+              data-rating="4.6"
+            >
+              <img
+                loading="lazy"
+                src="cosmic-custard-commando.png"
+                alt="Cosmic Custard Commando game poster"
+              />
+
+              <div class="demo-card-body">
+                <h3>Cosmic Custard Commando</h3>
+                <p class="demo-meta">Action Shooter · 1995</p>
+                <p class="demo-rating">★ 4.6</p>
+                <button
+                  class="demo-favorite"
+                  type="button"
+                  data-game="cosmic-custard"
+                  aria-pressed="false"
+                >
+                  ♡ Favorite
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="features">
-        <p class="section-label">What I built</p>
+        <p class="section-label">What I Built</p>
         <h2>More than a themed image</h2>
-        <p class="section-intro">The project is a multi-page MVC application. Its catalog data drives Razor views, while JavaScript adds fast client-side interaction without requiring user accounts or a database.</p>
+
+        <p class="section-intro">
+          Quarter Quest is a working multi-page website, not just a visual
+          mockup. Visitors can browse the catalog, open game pages, search and
+          sort titles, save favorites, and submit ratings.
+        </p>
+
         <div class="feature-grid">
-          <article class="card"><h3>Search + sorting</h3><p>Filter games by title or genre, then sort by title, year, rating, or vote count.</p></article>
-          <article class="card"><h3>Quick View</h3><p>Open any game in a focused modal without losing the catalog context.</p></article>
-          <article class="card"><h3>Detail routes</h3><p>Each title has a dedicated controller-backed details page with a real not-found path.</p></article>
-          <article class="card"><h3>Favorites</h3><p>Heart controls persist selected games in browser storage between visits.</p></article>
-          <article class="card"><h3>Star ratings</h3><p>Interactive ratings update averages and vote counts while preserving the original seed data.</p></article>
-          <article class="card"><h3>Hall of Fame</h3><p>A ranked view orders the catalog by average rating, then uses vote count as a tiebreaker.</p></article>
+          <article class="card">
+            <h3>Search and sorting</h3>
+            <p>
+              Filter games by title or genre, then sort by title, year, rating,
+              or vote count.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Quick View</h3>
+            <p>
+              Open any game in a focused window without losing your place in
+              the catalog.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Individual game pages</h3>
+            <p>
+              Each game has its own page, and an invalid link displays a proper
+              not-found response.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Favorites</h3>
+            <p>
+              Favorite games stay saved in the visitor’s browser between
+              visits.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Star ratings</h3>
+            <p>
+              Ratings update each game’s average score and vote count.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Hall of Fame</h3>
+            <p>
+              A ranked page orders the games by average rating and uses vote
+              count to break ties.
+            </p>
+          </article>
         </div>
       </section>
 
       <section id="architecture">
-        <p class="section-label">Implementation</p>
-        <h2>Explore how the application works</h2>
-        <p class="section-intro">Select a file to follow the same game data from the C# model, through MVC routing and Razor rendering, into the browser interactions.</p>
+        <p class="section-label">How It Works</p>
+        <h2>Follow the project from data to page</h2>
+
+        <p class="section-intro">
+          Choose a file to see what it controls, how it connects to the page,
+          and why it matters.
+        </p>
 
         <div class="code-explorer">
-          <div class="file-tabs" role="tablist" aria-label="Quarter Quest source files">
-            <button class="file-tab" type="button" role="tab" id="tab-model" aria-controls="panel-model" aria-selected="true" tabindex="0">Game.cs</button>
-            <button class="file-tab" type="button" role="tab" id="tab-controller" aria-controls="panel-controller" aria-selected="false" tabindex="-1">GamesController.cs</button>
-            <button class="file-tab" type="button" role="tab" id="tab-view" aria-controls="panel-view" aria-selected="false" tabindex="-1">Games.cshtml</button>
-            <button class="file-tab" type="button" role="tab" id="tab-script" aria-controls="panel-script" aria-selected="false" tabindex="-1">site.js</button>
+          <div
+            class="file-tabs"
+            role="tablist"
+            aria-label="Quarter Quest source files"
+          >
+            <button
+              class="file-tab"
+              type="button"
+              role="tab"
+              id="tab-model"
+              aria-controls="panel-model"
+              aria-selected="true"
+              tabindex="0"
+            >
+              Game.cs
+            </button>
+
+            <button
+              class="file-tab"
+              type="button"
+              role="tab"
+              id="tab-controller"
+              aria-controls="panel-controller"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              GamesController.cs
+            </button>
+
+            <button
+              class="file-tab"
+              type="button"
+              role="tab"
+              id="tab-view"
+              aria-controls="panel-view"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              Games.cshtml
+            </button>
+
+            <button
+              class="file-tab"
+              type="button"
+              role="tab"
+              id="tab-script"
+              aria-controls="panel-script"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              site.js
+            </button>
           </div>
 
-          <article class="code-panel active" id="panel-model" role="tabpanel" aria-labelledby="tab-model">
+          <article
+            class="code-panel active"
+            id="panel-model"
+            role="tabpanel"
+            aria-labelledby="tab-model"
+          >
             <div class="code-card">
               <div class="code-title">Models/Game.cs</div>
+
               <pre><code>public class Game
 {
     public int Id { get; set; }
@@ -312,22 +1034,47 @@
         VoteCount == 1 ? "vote" : "votes";
 }</code></pre>
             </div>
+
             <div class="code-explanation">
-              <p class="section-label">01 · Data model</p>
-              <h3>One dependable shape for every game</h3>
-              <p>The model keeps titles, artwork, descriptions, and ratings together. Calculated properties prevent rating logic from being repeated throughout the views.</p>
+              <p class="section-label">01 · Game Information</p>
+              <h3>A consistent format for every game</h3>
+
+              <p>
+                This file defines the information every game needs, including
+                its title, artwork, description, and ratings. It also calculates
+                the average rating and vote count automatically.
+              </p>
+
               <ul>
-                <li>Default values avoid unexpected null strings.</li>
-                <li><code>VoteCount</code> and <code>AverageRating</code> always reflect the rating array.</li>
-                <li><code>VoteLabel</code> keeps display grammar out of the page markup.</li>
+                <li>Default values prevent missing text from causing errors.</li>
+                <li>
+                  <code>VoteCount</code> and <code>AverageRating</code> always
+                  reflect the rating list.
+                </li>
+                <li>
+                  <code>VoteLabel</code> chooses the correct word: “vote” or
+                  “votes.”
+                </li>
               </ul>
-              <div class="takeaway"><strong>Interview takeaway:</strong> I used the model to centralize both the game data and the rules derived from that data.</div>
+
+              <div class="takeaway">
+                <strong>Takeaway:</strong> Keeping the game information and
+                rating rules in one place makes the rest of the project simpler
+                and more consistent.
+              </div>
             </div>
           </article>
 
-          <article class="code-panel" id="panel-controller" role="tabpanel" aria-labelledby="tab-controller" hidden>
+          <article
+            class="code-panel"
+            id="panel-controller"
+            role="tabpanel"
+            aria-labelledby="tab-controller"
+            hidden
+          >
             <div class="code-card">
               <div class="code-title">Controllers/GamesController.cs</div>
+
               <pre><code>public IActionResult Details(int id)
 {
     var game = games.FirstOrDefault(g =&gt; g.Id == id);
@@ -350,22 +1097,43 @@ public IActionResult HallOfFame()
     return View(rankedGames);
 }</code></pre>
             </div>
+
             <div class="code-explanation">
-              <p class="section-label">02 · Request handling</p>
-              <h3>Routes return the right view and data</h3>
-              <p>The controller finds an individual game from its route ID and returns a real 404 response when no match exists. A separate action creates the Hall of Fame ranking.</p>
+              <p class="section-label">02 · Page Requests</p>
+              <h3>Opening the correct page</h3>
+
+              <p>
+                This file finds the game requested in the URL. If the game does
+                not exist, it displays a proper 404 response. It also builds the
+                Hall of Fame ranking.
+              </p>
+
               <ul>
-                <li>Route parameters connect URLs to individual records.</li>
-                <li>Missing games are handled explicitly.</li>
-                <li>LINQ sorts first by rating and then by vote count.</li>
+                <li>The number in the URL identifies which game to open.</li>
+                <li>Missing games receive a proper not-found response.</li>
+                <li>
+                  The Hall of Fame sorts by rating, then uses vote count to
+                  break ties.
+                </li>
               </ul>
-              <div class="takeaway"><strong>Interview takeaway:</strong> I kept request handling in the controller instead of mixing it into the page template.</div>
+
+              <div class="takeaway">
+                <strong>Takeaway:</strong> Each part has a clear job: finding a
+                game, handling a missing entry, or building the rankings.
+              </div>
             </div>
           </article>
 
-          <article class="code-panel" id="panel-view" role="tabpanel" aria-labelledby="tab-view" hidden>
+          <article
+            class="code-panel"
+            id="panel-view"
+            role="tabpanel"
+            aria-labelledby="tab-view"
+            hidden
+          >
             <div class="code-card">
               <div class="code-title">Views/Games/Games.cshtml</div>
+
               <pre><code>&lt;div class="game-grid" id="gameGrid"&gt;
   @foreach (var game in Model)
   {
@@ -394,22 +1162,43 @@ public IActionResult HallOfFame()
   }
 &lt;/div&gt;</code></pre>
             </div>
+
             <div class="code-explanation">
-              <p class="section-label">03 · Server rendering</p>
-              <h3>The catalog grows from data, not copied cards</h3>
-              <p>Razor loops over the model to generate consistent cards. Adding another game to the controller automatically gives it the same layout and details link.</p>
+              <p class="section-label">03 · Building the Catalog</p>
+              <h3>One layout reused for every game</h3>
+
+              <p>
+                This page repeats the same card design for every game. Adding a
+                new game automatically gives it the same layout and its own
+                details link.
+              </p>
+
               <ul>
-                <li>Model values are rendered into semantic page content.</li>
-                <li>Tag Helpers generate the details-page route.</li>
-                <li>Data attributes expose values needed by JavaScript.</li>
+                <li>Each game’s information is inserted into the card.</li>
+                <li>The details button points to the correct game page.</li>
+                <li>
+                  The page includes the values JavaScript needs for searching
+                  and sorting.
+                </li>
               </ul>
-              <div class="takeaway"><strong>Interview takeaway:</strong> The view stays reusable because presentation is generated from structured data instead of duplicated HTML.</div>
+
+              <div class="takeaway">
+                <strong>Takeaway:</strong> I can add another game without
+                copying and editing an entire block of HTML.
+              </div>
             </div>
           </article>
 
-          <article class="code-panel" id="panel-script" role="tabpanel" aria-labelledby="tab-script" hidden>
+          <article
+            class="code-panel"
+            id="panel-script"
+            role="tabpanel"
+            aria-labelledby="tab-script"
+            hidden
+          >
             <div class="code-card">
               <div class="code-title">wwwroot/js/site.js</div>
+
               <pre><code>function filterGames() {
     const search = document
         .getElementById('gameSearch')
@@ -434,80 +1223,283 @@ function saveFavoriteIds(ids) {
     );
 }</code></pre>
             </div>
+
             <div class="code-explanation">
-              <p class="section-label">04 · Browser interaction</p>
-              <h3>Useful behavior without page reloads</h3>
-              <p>JavaScript reads the data attributes created by Razor to filter cards immediately. Favorites use local storage so choices remain available on that browser.</p>
+              <p class="section-label">04 · Page Interaction</p>
+              <h3>Search and favorites that respond immediately</h3>
+
+              <p>
+                JavaScript filters the game cards as the visitor types. It also
+                saves favorite games so they remain selected when the visitor
+                returns.
+              </p>
+
               <ul>
                 <li>Search matches both game titles and genres.</li>
-                <li>The server-rendered cards remain the source of truth.</li>
-                <li>Local storage adds persistence without accounts or a database.</li>
+                <li>
+                  The original game cards remain available without the extra
+                  interactions.
+                </li>
+                <li>Favorites can be remembered without requiring an account.</li>
               </ul>
-              <div class="takeaway"><strong>Interview takeaway:</strong> I used client-side code for fast interaction while keeping the core content server-rendered.</div>
+
+              <div class="takeaway">
+                <strong>Takeaway:</strong> I used JavaScript where it improves
+                the experience while keeping the main catalog straightforward.
+              </div>
             </div>
           </article>
         </div>
       </section>
 
       <section id="gallery">
-        <p class="section-label">Visual system</p>
+        <p class="section-label">Design</p>
         <h2>Six games, one arcade world</h2>
-        <p class="section-intro">Each fictional cabinet gets its own poster while sharing the same loud color, typography, and retro sci-fi tone.</p>
+
+        <p class="section-intro">
+          Each fictional cabinet gets its own poster while sharing the same
+          energetic colors, typography, and retro science-fiction style.
+        </p>
+
         <div class="gallery">
-          <figure class="game-art"><img loading="lazy" src="laser-lobster-iv.png" alt="Laser Lobster IV game poster" /><figcaption>Laser Lobster IV · Space Shooter</figcaption></figure>
-          <figure class="game-art"><img loading="lazy" src="rocket-gogo-pogo.png" alt="Rocket Gogo Pogo game poster" /><figcaption>Rocket Gogo Pogo · Platformer</figcaption></figure>
-          <figure class="game-art"><img loading="lazy" src="brick-battalion.png" alt="Brick Battalion game poster" /><figcaption>Brick Battalion · Brick Breaker</figcaption></figure>
-          <figure class="game-art"><img loading="lazy" src="turbo-cruise-xl.png" alt="Turbo Cruise XL game poster" /><figcaption>Turbo Cruise XL · Arcade Racer</figcaption></figure>
-          <figure class="game-art"><img loading="lazy" src="mecha-custodian.png" alt="Mecha Custodian game poster" /><figcaption>Mecha Custodian · Puzzle Action</figcaption></figure>
-          <figure class="game-art"><img loading="lazy" src="cosmic-custard-commando.png" alt="Cosmic Custard Commando game poster" /><figcaption>Cosmic Custard Commando · Action Shooter</figcaption></figure>
+          <figure class="game-art">
+            <img loading="lazy" src="laser-lobster-iv.png" alt="Laser Lobster IV game poster" />
+            <figcaption>Laser Lobster IV · Space Shooter</figcaption>
+          </figure>
+
+          <figure class="game-art">
+            <img loading="lazy" src="rocket-gogo-pogo.png" alt="Rocket Gogo Pogo game poster" />
+            <figcaption>Rocket Gogo Pogo · Platformer</figcaption>
+          </figure>
+
+          <figure class="game-art">
+            <img loading="lazy" src="brick-battalion.png" alt="Brick Battalion game poster" />
+            <figcaption>Brick Battalion · Brick Breaker</figcaption>
+          </figure>
+
+          <figure class="game-art">
+            <img loading="lazy" src="turbo-cruise-xl.png" alt="Turbo Cruise XL game poster" />
+            <figcaption>Turbo Cruise XL · Arcade Racer</figcaption>
+          </figure>
+
+          <figure class="game-art">
+            <img loading="lazy" src="mecha-custodian.png" alt="Mecha Custodian game poster" />
+            <figcaption>Mecha Custodian · Puzzle Action</figcaption>
+          </figure>
+
+          <figure class="game-art">
+            <img loading="lazy" src="cosmic-custard-commando.png" alt="Cosmic Custard Commando game poster" />
+            <figcaption>Cosmic Custard Commando · Action Shooter</figcaption>
+          </figure>
         </div>
       </section>
 
       <section>
         <div class="next-step">
           <div>
-            <p class="section-label">Source included</p>
+            <p class="section-label">Source Included</p>
             <h2>Inspect the complete project</h2>
-            <p>The download includes the controller, model, Razor views, styles, scripts, artwork, solution, and setup notes—without generated build folders.</p>
+
+            <p>
+              The download includes the complete C# project, page templates,
+              styling, JavaScript, artwork, and setup notes.
+            </p>
           </div>
-          <a class="button primary" href="QuarterQuestArcade-source.zip" download>Download Source</a>
+
+          <a class="button primary" href="QuarterQuestArcade-source.zip" download>
+            Download Source
+          </a>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>Jason Anderson · A3DWaffle · <a href="mailto:JacekAnderson@gmail.com">JacekAnderson@gmail.com</a></p>
+      <p>
+        Jason Anderson · A3DWaffle ·
+        <a href="mailto:JacekAnderson@gmail.com">JacekAnderson@gmail.com</a>
+      </p>
     </footer>
   </div>
+
   <script>
-    const fileTabs = Array.from(document.querySelectorAll('.file-tab'));
-    const codePanels = Array.from(document.querySelectorAll('.code-panel'));
+    /* Code explorer */
+
+    const fileTabs = Array.from(document.querySelectorAll(".file-tab"));
+    const codePanels = Array.from(document.querySelectorAll(".code-panel"));
 
     function selectFileTab(tab) {
-      fileTabs.forEach(item => {
+      fileTabs.forEach((item) => {
         const selected = item === tab;
-        item.setAttribute('aria-selected', String(selected));
+
+        item.setAttribute("aria-selected", String(selected));
         item.tabIndex = selected ? 0 : -1;
       });
 
-      codePanels.forEach(panel => {
-        const selected = panel.id === tab.getAttribute('aria-controls');
-        panel.classList.toggle('active', selected);
+      codePanels.forEach((panel) => {
+        const selected =
+          panel.id === tab.getAttribute("aria-controls");
+
+        panel.classList.toggle("active", selected);
         panel.hidden = !selected;
       });
     }
 
     fileTabs.forEach((tab, index) => {
-      tab.addEventListener('click', () => selectFileTab(tab));
-      tab.addEventListener('keydown', event => {
-        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      tab.addEventListener("click", () => selectFileTab(tab));
+
+      tab.addEventListener("keydown", (event) => {
+        if (
+          event.key !== "ArrowLeft" &&
+          event.key !== "ArrowRight"
+        ) {
+          return;
+        }
+
         event.preventDefault();
-        const direction = event.key === 'ArrowRight' ? 1 : -1;
-        const nextTab = fileTabs[(index + direction + fileTabs.length) % fileTabs.length];
+
+        const direction =
+          event.key === "ArrowRight" ? 1 : -1;
+
+        const nextTab =
+          fileTabs[
+            (index + direction + fileTabs.length) %
+            fileTabs.length
+          ];
+
         selectFileTab(nextTab);
         nextTab.focus();
       });
     });
+
+    /* Interactive preview */
+
+    const demoSearch = document.getElementById("demoSearch");
+    const demoSort = document.getElementById("demoSort");
+    const demoGrid = document.getElementById("demoGrid");
+    const demoResults = document.getElementById("demoResults");
+
+    const demoCards = demoGrid
+      ? Array.from(demoGrid.querySelectorAll(".demo-card"))
+      : [];
+
+    let demoFavorites = new Set();
+
+    try {
+      demoFavorites = new Set(
+        JSON.parse(
+          localStorage.getItem(
+            "quarterQuestPreviewFavorites"
+          ) || "[]"
+        )
+      );
+    } catch {
+      demoFavorites = new Set();
+    }
+
+    function updateFavoriteButtons() {
+      document
+        .querySelectorAll(".demo-favorite")
+        .forEach((button) => {
+          const selected =
+            demoFavorites.has(button.dataset.game);
+
+          button.setAttribute(
+            "aria-pressed",
+            String(selected)
+          );
+
+          button.textContent = selected
+            ? "♥ Favorited"
+            : "♡ Favorite";
+        });
+    }
+
+    function updateDemo() {
+      if (!demoGrid) {
+        return;
+      }
+
+      const search =
+        demoSearch.value.trim().toLowerCase();
+
+      const visibleCards = demoCards.filter((card) => {
+        const searchableText =
+          `${card.dataset.title} ${card.dataset.genre}`
+            .toLowerCase();
+
+        const matches = searchableText.includes(search);
+
+        card.hidden = !matches;
+
+        return matches;
+      });
+
+      visibleCards.sort((first, second) => {
+        if (demoSort.value === "year-desc") {
+          return (
+            Number(second.dataset.year) -
+            Number(first.dataset.year)
+          );
+        }
+
+        if (demoSort.value === "rating-desc") {
+          return (
+            Number(second.dataset.rating) -
+            Number(first.dataset.rating)
+          );
+        }
+
+        return first.dataset.title.localeCompare(
+          second.dataset.title
+        );
+      });
+
+      visibleCards.forEach((card) => {
+        demoGrid.appendChild(card);
+      });
+
+      demoResults.textContent =
+        `Showing ${visibleCards.length} ` +
+        (visibleCards.length === 1
+          ? "game"
+          : "games");
+    }
+
+    document
+      .querySelectorAll(".demo-favorite")
+      .forEach((button) => {
+        button.addEventListener("click", () => {
+          const game = button.dataset.game;
+
+          if (demoFavorites.has(game)) {
+            demoFavorites.delete(game);
+          } else {
+            demoFavorites.add(game);
+          }
+
+          localStorage.setItem(
+            "quarterQuestPreviewFavorites",
+            JSON.stringify([...demoFavorites])
+          );
+
+          updateFavoriteButtons();
+        });
+      });
+
+    if (demoSearch && demoSort) {
+      demoSearch.addEventListener(
+        "input",
+        updateDemo
+      );
+
+      demoSort.addEventListener(
+        "change",
+        updateDemo
+      );
+
+      updateFavoriteButtons();
+      updateDemo();
+    }
   </script>
 </body>
 </html>
