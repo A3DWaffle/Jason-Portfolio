@@ -289,12 +289,26 @@
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 18px;
     }
 
     .project-card {
       padding: 22px;
+    }
+
+    .project-card .project-link {
+      display: inline-block;
+      padding: 9px 12px;
+      border: 1px solid var(--border-bright);
+      border-radius: 9px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .project-card .project-link:hover {
+      color: var(--bg);
+      background: var(--green);
     }
 
     .project-card h3 {
@@ -487,6 +501,21 @@
             </div>
             <a href="https://github.com/A3DWaffle/Expanding-Fronts-AI" target="_blank">View repository</a>
           </article>
+
+          <article class="project-card">
+            <h3>Quarter Quest Arcade</h3>
+            <div class="project-type">ASP.NET Core MVC Web Application</div>
+            <p>
+              A responsive arcade catalog featuring six original fictional games. The project combines C# models and controllers, Razor-generated pages, and JavaScript search, sorting, favorites, ratings, and quick-view interactions.
+            </p>
+            <div class="tech">
+              <span>C#</span>
+              <span>ASP.NET Core MVC</span>
+              <span>Razor</span>
+              <span>JavaScript</span>
+            </div>
+            <a class="project-link" href="quarter-quest.html">View interactive case study</a>
+          </article>
         </div>
       </section>
 
@@ -522,4 +551,3 @@
   </div>
 </body>
 </html>
-
