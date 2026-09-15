@@ -12,6 +12,7 @@
   <title>Jason Anderson | Software Development Portfolio</title>
 
   <style>
+    /* Design tokens keep the site’s colors consistent and easy to update. */
     :root {
       --bg: #07120b;
       --panel: #0f1f14;
@@ -26,16 +27,19 @@
       --border-bright: rgba(34, 197, 94, 0.42);
     }
 
+    /* A small reset makes element sizing and spacing predictable. */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    /* Smoothly moves to sections when a navigation link is selected. */
     html {
       scroll-behavior: smooth;
     }
 
+    /* Global typography and layered gradients establish the visual theme. */
     body {
       font-family: Arial, Helvetica, sans-serif;
       background:
@@ -54,6 +58,7 @@
       line-height: 1.65;
     }
 
+    /* Decorative scanlines; pointer-events prevents them blocking clicks. */
     body::before {
       content: "";
       position: fixed;
@@ -80,18 +85,21 @@
       text-decoration: underline;
     }
 
+    /* Visible keyboard focus improves accessibility. */
     a:focus-visible {
       outline: 3px solid var(--orange);
       outline-offset: 4px;
       border-radius: 4px;
     }
 
+    /* Centers the content and limits line length on large displays. */
     .page {
       width: min(1120px, 92%);
       margin: 0 auto;
       padding: 24px 0 42px;
     }
 
+    /* Flexbox places the identity and navigation on the same row. */
     header {
       display: flex;
       justify-content: space-between;
@@ -129,6 +137,7 @@
       scroll-margin-top: 24px;
     }
 
+    /* The hero uses a two-column grid for the introduction and summary card. */
     .hero {
       display: grid;
       grid-template-columns: 1.25fr 0.75fr;
@@ -178,6 +187,7 @@
       margin-top: 26px;
     }
 
+    /* One reusable button class supports primary and secondary variations. */
     .button {
       display: inline-block;
       padding: 11px 16px;
@@ -212,6 +222,7 @@
       color: var(--text);
     }
 
+    /* Shared card styling avoids repeating the same visual rules. */
     .hud-card,
     .featured,
     .card,
@@ -304,6 +315,7 @@
       color: var(--muted);
     }
 
+    /* Featured projects use a responsive content-and-summary grid. */
     .featured {
       padding: 28px;
       border-color: rgba(249, 115, 22, 0.45);
@@ -313,7 +325,7 @@
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       gap: 28px;
-      align-items: center;
+      align-items: stretch;
     }
 
     .featured h3 {
@@ -336,12 +348,24 @@
     }
 
     .callout {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       padding: 20px;
       border: 1px solid rgba(34, 197, 94, 0.35);
       border-radius: 14px;
       background: rgba(34, 197, 94, 0.08);
       font-family: Consolas, Monaco, monospace;
       font-size: 0.9rem;
+    }
+
+    /* The EF emblem gives the summary column visual weight without obscuring text. */
+    .ef-emblem {
+      display: block;
+      width: min(58%, 210px);
+      height: auto;
+      margin: 0 auto 24px;
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.45));
     }
 
     .callout p {
@@ -356,6 +380,7 @@
       color: var(--green);
     }
 
+    /* Flex-wrap lets technology tags flow onto new lines as needed. */
     .tech {
       display: flex;
       flex-wrap: wrap;
@@ -372,6 +397,7 @@
       font-size: 0.82rem;
     }
 
+    /* EF community statistics use equal-width grid columns. */
     .impact-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -406,6 +432,7 @@
       text-align: center;
     }
 
+    /* Reusable grid foundations for project, skill, and career cards. */
     .contribution-grid,
     .skills-grid,
     .path-grid {
@@ -462,6 +489,7 @@
       border-color: rgba(34, 197, 94, 0.48);
     }
 
+    /* Quarter Quest pairs the written case study with a visual preview. */
     .arcade-grid {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
@@ -527,6 +555,7 @@
       padding: 22px;
     }
 
+    /* aspect-ratio keeps the embedded video responsive at 16:9. */
     .video-wrap {
       position: relative;
       width: 100%;
@@ -598,6 +627,7 @@
       font-size: 0.95rem;
     }
 
+    /* Tablet layout: multi-column sections collapse for readability. */
     @media (max-width: 880px) {
       header {
         display: block;
@@ -625,6 +655,7 @@
       }
     }
 
+    /* Phone layout: cards and statistics become single-column. */
     @media (max-width: 540px) {
       .page {
         width: min(94%, 1120px);
@@ -655,6 +686,7 @@
 
 <body>
   <div class="page">
+    <!-- Semantic header contains the site identity and primary navigation. -->
     <header>
       <div>
         <div class="name">Jason Anderson</div>
@@ -674,7 +706,9 @@
       </nav>
     </header>
 
+    <!-- Main identifies the page’s unique content for browsers and assistive technology. -->
     <main>
+      <!-- Hero quickly introduces my focus, education, and core technologies. -->
       <section class="hero" aria-labelledby="hero-title">
         <div>
           <span class="tagline">
@@ -722,6 +756,7 @@
         </aside>
       </section>
 
+      <!-- Flagship project: real-world AI development and supporting tools. -->
       <section id="expanding-fronts">
         <div class="section-heading">
           <p class="eyebrow">Flagship Work</p>
@@ -769,6 +804,7 @@
                 signature help, rule folding, an outline, and basic diagnostics.
               </p>
 
+              <!-- aria-label gives assistive technology context for this tag group. -->
               <div class="tech" aria-label="Expanding Fronts skills">
                 <span>Game AI</span>
                 <span>Rule-Based Scripting</span>
@@ -808,6 +844,7 @@
                 </a>
               </div>
 
+              <!-- Values are fixed ModDB snapshots; JavaScript only animates their display. -->
               <div class="impact-stats" aria-label="Expanding Fronts community statistics">
                 <div class="impact-stat">
                   <strong class="count-up" data-target="1656476">0</strong>
@@ -829,6 +866,12 @@
             </div>
 
             <div class="callout" aria-label="Project progression">
+              <img
+                class="ef-emblem"
+                src="assets/expanding-fronts/ef-ai-tools.png"
+                alt="Expanding Fronts Rebel and Imperial emblem"
+              />
+
               <p class="accent">&gt; PLAYER OBSERVATION</p>
               <p>Found weaknesses in computer-player behavior.</p>
 
@@ -887,6 +930,7 @@
         </div>
       </section>
 
+      <!-- Web case study demonstrating MVC, Razor, HTML, CSS, and JavaScript. -->
       <section id="quarter-quest">
         <div class="section-heading">
           <p class="eyebrow">Featured Web Project</p>
@@ -964,6 +1008,7 @@
         </div>
       </section>
 
+      <!-- Skills are grouped by role so employers can scan them quickly. -->
       <section id="skills">
         <div class="section-heading">
           <p class="eyebrow">Capabilities</p>
@@ -1009,6 +1054,7 @@
         </div>
       </section>
 
+      <!-- Privacy-enhanced YouTube embed documents my role on the EF team. -->
       <section id="interview">
         <div class="section-heading">
           <p class="eyebrow">Featured Media</p>
@@ -1050,6 +1096,7 @@
         </article>
       </section>
 
+      <!-- Background connects early technical experience to current work. -->
       <section id="about">
         <div class="section-heading">
           <p class="eyebrow">Background</p>
@@ -1138,6 +1185,7 @@
         </div>
       </section>
 
+      <!-- Direct calls to action keep contact information easy to find. -->
       <section id="contact">
         <div class="contact-card">
           <p class="eyebrow">Contact</p>
@@ -1170,6 +1218,7 @@
       </section>
     </main>
 
+    <!-- Footer repeats essential identity and contact information. -->
     <footer>
       <p>
         © <span id="current-year">2026</span>
@@ -1185,17 +1234,24 @@
   </div>
 
   <script>
+    // Keeps the copyright year current without a manual annual edit.
     const yearElement = document.querySelector("#current-year");
     yearElement.textContent = new Date().getFullYear();
 
+    // Selects the two numeric EF statistics that should animate.
     const counters = document.querySelectorAll(".count-up");
+
+    // Accessibility: skips animation when the user prefers reduced motion.
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Intl.NumberFormat converts large values into readable forms such as 1.7M.
     const formatCounter = (value) => new Intl.NumberFormat("en-US", {
       notation: "compact",
       maximumFractionDigits: 1
     }).format(value) + "+";
 
     counters.forEach((counter) => {
+      // data-target keeps each value in its HTML element instead of duplicating code.
       const target = Number(counter.dataset.target);
 
       if (reduceMotion) {
@@ -1206,8 +1262,11 @@
       const startTime = performance.now();
       const duration = 1200;
 
+      // requestAnimationFrame updates in sync with the browser’s rendering cycle.
       const updateCounter = (currentTime) => {
         const progress = Math.min((currentTime - startTime) / duration, 1);
+
+        // Ease-out motion starts quickly and slows naturally near the target.
         const easedProgress = 1 - Math.pow(1 - progress, 3);
         counter.textContent = formatCounter(Math.floor(target * easedProgress));
 
@@ -1221,4 +1280,3 @@
   </script>
 </body>
 </html>
-
