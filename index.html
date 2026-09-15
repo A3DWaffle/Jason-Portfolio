@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jason Anderson's portfolio of web development, developer tooling, and real-time strategy game AI projects." />
-  <title>Jason Anderson | Portfolio</title>
+
+  <meta
+    name="description"
+    content="Jason Anderson's software development portfolio, featuring web development, developer tools, and real-time strategy game AI."
+  />
+
+  <title>Jason Anderson | Software Development Portfolio</title>
+
   <style>
     :root {
       --bg: #07120b;
@@ -15,9 +21,9 @@
       --green: #22c55e;
       --green-soft: rgba(34, 197, 94, 0.12);
       --orange: #f97316;
-      --orange-soft: rgba(249, 115, 22, 0.14);
+      --orange-soft: rgba(249, 115, 22, 0.12);
       --border: #24452d;
-      --border-bright: rgba(34, 197, 94, 0.4);
+      --border-bright: rgba(34, 197, 94, 0.42);
     }
 
     * {
@@ -33,17 +39,26 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(249, 115, 22, 0.16), transparent 28%),
-        radial-gradient(circle at top right, rgba(34, 197, 94, 0.13), transparent 32%),
+        radial-gradient(
+          circle at top left,
+          rgba(249, 115, 22, 0.16),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at top right,
+          rgba(34, 197, 94, 0.13),
+          transparent 32%
+        ),
         var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     body::before {
       content: "";
       position: fixed;
       inset: 0;
+      z-index: 10;
       pointer-events: none;
       background: repeating-linear-gradient(
         to bottom,
@@ -53,7 +68,6 @@
         transparent 4px
       );
       opacity: 0.18;
-      z-index: 10;
     }
 
     a {
@@ -84,18 +98,18 @@
       align-items: center;
       gap: 20px;
       padding: 18px;
-      border: 1px solid var(--border);
-      background: rgba(6, 16, 8, 0.74);
-      border-radius: 18px;
       margin-bottom: 58px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(6, 16, 8, 0.78);
       box-shadow: 0 0 30px rgba(34, 197, 94, 0.08);
     }
 
     .name {
+      color: var(--text);
       font-size: 1.35rem;
       font-weight: 800;
       letter-spacing: 0.03em;
-      color: var(--text);
     }
 
     .subtitle {
@@ -105,9 +119,14 @@
 
     nav {
       display: flex;
-      gap: 16px;
       flex-wrap: wrap;
+      gap: 16px;
       font-size: 0.94rem;
+    }
+
+    section {
+      margin-bottom: 64px;
+      scroll-margin-top: 24px;
     }
 
     .hero {
@@ -115,84 +134,110 @@
       grid-template-columns: 1.25fr 0.75fr;
       gap: 36px;
       align-items: center;
-      margin-bottom: 56px;
     }
 
     .tagline {
       display: inline-block;
-      color: #bbf7d0;
-      background: var(--green-soft);
-      border: 1px solid var(--border-bright);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.9rem;
       margin-bottom: 18px;
-      text-transform: uppercase;
+      padding: 8px 12px;
+      border: 1px solid var(--border-bright);
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: #bbf7d0;
+      font-size: 0.88rem;
       letter-spacing: 0.09em;
+      text-transform: uppercase;
     }
 
     h1 {
-      font-size: clamp(2.4rem, 6vw, 4.65rem);
-      line-height: 1.04;
-      margin-bottom: 20px;
       max-width: 850px;
+      margin-bottom: 20px;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.04;
     }
 
-    .hero p {
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.35rem);
+      line-height: 1.2;
+    }
+
+    h3 {
+      line-height: 1.3;
+    }
+
+    .hero-copy {
+      max-width: 730px;
       color: var(--muted);
       font-size: 1.08rem;
-      max-width: 720px;
     }
 
     .buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 28px;
+      margin-top: 26px;
     }
 
     .button {
       display: inline-block;
       padding: 11px 16px;
+      border: 1px solid var(--border);
       border-radius: 10px;
       font-weight: 800;
-      border: 1px solid var(--border);
       text-decoration: none;
-      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+      transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        background 160ms ease;
     }
 
     .button:hover {
-      text-decoration: none;
       transform: translateY(-2px);
+      text-decoration: none;
     }
 
     .button.primary {
+      border-color: var(--orange);
       background: var(--orange);
       color: var(--bg);
-      border-color: var(--orange);
     }
 
     .button.secondary {
-      color: var(--text);
       background: rgba(15, 31, 20, 0.82);
+      color: var(--text);
+    }
+
+    .button.secondary:hover {
+      border-color: var(--green);
+      color: var(--text);
     }
 
     .hud-card,
-    .project-card,
+    .featured,
+    .card,
     .panel,
-    .featured {
+    .media-card,
+    .contact-card {
       position: relative;
-      background: linear-gradient(145deg, rgba(15, 31, 20, 0.94), rgba(6, 16, 8, 0.95));
+      overflow: hidden;
       border: 1px solid var(--border);
       border-radius: 18px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28), inset 0 0 18px rgba(34, 197, 94, 0.03);
-      overflow: hidden;
+      background: linear-gradient(
+        145deg,
+        rgba(15, 31, 20, 0.95),
+        rgba(6, 16, 8, 0.96)
+      );
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.28),
+        inset 0 0 18px rgba(34, 197, 94, 0.03);
     }
 
     .hud-card::before,
-    .project-card::before,
+    .featured::before,
+    .card::before,
     .panel::before,
-    .featured::before {
+    .media-card::before,
+    .contact-card::before {
       content: "";
       position: absolute;
       top: 0;
@@ -207,13 +252,13 @@
     }
 
     .terminal {
-      font-family: Consolas, Monaco, monospace;
-      background: var(--panel-dark);
+      margin-bottom: 18px;
+      padding: 18px;
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 18px;
+      background: var(--panel-dark);
       color: var(--muted);
-      margin-bottom: 18px;
+      font-family: Consolas, Monaco, monospace;
       font-size: 0.9rem;
     }
 
@@ -227,170 +272,172 @@
 
     .skill-list {
       display: grid;
-      grid-template-columns: 1fr;
       gap: 10px;
     }
 
     .skill-list span {
       display: block;
-      background: rgba(6, 16, 8, 0.86);
-      border: 1px solid var(--border);
       padding: 10px;
+      border: 1px solid var(--border);
       border-radius: 10px;
+      background: rgba(6, 16, 8, 0.86);
       color: var(--text);
       font-size: 0.92rem;
-    }
-
-    section {
-      margin-bottom: 58px;
     }
 
     .section-heading {
       margin-bottom: 22px;
     }
 
-    .section-heading p {
+    .eyebrow {
+      margin-bottom: 6px;
       color: var(--orange);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
       font-size: 0.8rem;
       font-weight: 800;
-      margin-bottom: 6px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
 
-    h2 {
-      font-size: 2rem;
+    .section-intro {
+      max-width: 760px;
+      margin-top: 10px;
+      color: var(--muted);
     }
 
     .featured {
-      padding: 26px;
-      border-color: rgba(249, 115, 22, 0.42);
+      padding: 28px;
+      border-color: rgba(249, 115, 22, 0.45);
     }
 
     .featured-grid {
       display: grid;
-      grid-template-columns: 1fr 0.75fr;
-      gap: 24px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
       align-items: center;
     }
 
     .featured h3 {
+      margin-bottom: 12px;
       font-size: 1.75rem;
-      margin-bottom: 8px;
     }
 
     .featured p,
-    .project-card p,
+    .card p,
     .panel p,
-    .panel li {
+    .panel li,
+    .media-copy p,
+    .contact-card p {
       color: var(--muted);
     }
 
+    .featured p + p,
+    .panel p + p {
+      margin-top: 14px;
+    }
+
     .callout {
+      padding: 20px;
       border: 1px solid rgba(34, 197, 94, 0.35);
-      background: rgba(34, 197, 94, 0.08);
       border-radius: 14px;
-      padding: 16px;
-      color: var(--text);
+      background: rgba(34, 197, 94, 0.08);
       font-family: Consolas, Monaco, monospace;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
     }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
+    .callout p {
+      color: var(--text);
     }
 
-    .project-card {
-      padding: 22px;
-      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    .callout p + p {
+      margin-top: 7px;
     }
 
-    .project-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--border-bright);
-      box-shadow: 0 22px 44px rgba(0, 0, 0, 0.32), inset 0 0 18px rgba(34, 197, 94, 0.04);
-    }
-
-    .project-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 6px;
-    }
-
-    .project-type {
-      color: #fbd0aa;
-      font-size: 0.92rem;
-      margin-bottom: 14px;
+    .callout .accent {
+      color: var(--green);
     }
 
     .tech {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 16px 0;
+      margin: 18px 0;
     }
 
     .tech span {
-      background: var(--panel-dark);
+      padding: 5px 9px;
       border: 1px solid var(--border);
       border-radius: 999px;
-      padding: 5px 9px;
+      background: var(--panel-dark);
+      color: var(--text);
       font-size: 0.82rem;
+    }
+
+    .contribution-grid,
+    .skills-grid,
+    .path-grid {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .contribution-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .path-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin-bottom: 9px;
+      font-size: 1.12rem;
+    }
+
+    .card-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--orange);
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .takeaway {
+      margin-top: 18px;
+      padding: 18px;
+      border-left: 4px solid var(--green);
+      border-radius: 0 12px 12px 0;
+      background: var(--green-soft);
       color: var(--text);
     }
 
-    .impact-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin: 18px 0 8px;
-    }
-
-    .impact-stat {
-      padding: 12px 10px;
-      background: rgba(34, 197, 94, 0.08);
-      border: 1px solid rgba(34, 197, 94, 0.28);
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .impact-stat strong {
-      display: block;
-      color: var(--green);
-      font-family: Consolas, Monaco, monospace;
-      font-size: 1.2rem;
-    }
-
-    .impact-stat span,
-    .stat-note {
-      color: var(--muted);
-      font-size: 0.78rem;
-    }
-
-    .stat-note {
-      margin-bottom: 14px;
+    .takeaway strong {
+      color: #bbf7d0;
     }
 
     .arcade-feature {
-      padding: 26px;
       border-color: rgba(34, 197, 94, 0.48);
     }
 
     .arcade-grid {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
-      gap: 26px;
+      gap: 28px;
       align-items: center;
     }
 
     .arcade-grid h3 {
+      margin-bottom: 10px;
       font-size: 1.75rem;
-      margin-bottom: 8px;
-    }
-
-    .arcade-grid p {
-      color: var(--muted);
     }
 
     .arcade-preview {
@@ -401,7 +448,6 @@
       border: 1px solid rgba(249, 115, 22, 0.55);
       border-radius: 14px;
       background: var(--panel-dark);
-      box-shadow: inset 0 0 44px rgba(6, 16, 8, 0.72);
     }
 
     .arcade-preview img {
@@ -410,17 +456,19 @@
       height: 100%;
       min-height: 280px;
       object-fit: cover;
-      transition: transform 220ms ease, filter 220ms ease;
+      transition:
+        transform 220ms ease,
+        filter 220ms ease;
     }
 
     .arcade-preview::after {
-      content: "OPEN CASE STUDY  →";
+      content: "EXPLORE PROJECT →";
       position: absolute;
       right: 14px;
       bottom: 14px;
       padding: 8px 11px;
       border-radius: 8px;
-      background: rgba(6, 16, 8, 0.92);
+      background: rgba(6, 16, 8, 0.94);
       color: #fef3c7;
       font-family: Consolas, Monaco, monospace;
       font-size: 0.78rem;
@@ -433,47 +481,23 @@
       filter: saturate(1.08);
     }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .skill-card {
-      background: linear-gradient(145deg, rgba(15, 31, 20, 0.94), rgba(6, 16, 8, 0.95));
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px;
-    }
-
     .skill-card h3 {
       color: var(--orange);
-      font-size: 1rem;
-      margin-bottom: 6px;
-    }
-
-    .skill-card p {
-      color: var(--muted);
-      font-size: 0.92rem;
     }
 
     .media-card {
       display: grid;
-      grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+      grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
       gap: 24px;
       align-items: center;
       padding: 22px;
-      background: linear-gradient(145deg, rgba(15, 31, 20, 0.94), rgba(6, 16, 8, 0.95));
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
     }
 
     .video-wrap {
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 9;
       overflow: hidden;
+      aspect-ratio: 16 / 9;
       border: 1px solid var(--border);
       border-radius: 12px;
       background: var(--panel-dark);
@@ -487,23 +511,9 @@
       border: 0;
     }
 
-    .media-copy .eyebrow {
-      color: var(--orange);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
     .media-copy h3 {
-      font-size: 1.5rem;
       margin-bottom: 10px;
-    }
-
-    .media-copy p {
-      color: var(--muted);
-      margin-bottom: 18px;
+      font-size: 1.5rem;
     }
 
     .about-grid {
@@ -513,34 +523,48 @@
     }
 
     .panel {
-      padding: 22px;
+      padding: 24px;
+    }
+
+    .panel h3 {
+      margin-bottom: 10px;
     }
 
     .panel ul {
-      padding-left: 20px;
       margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .panel li + li {
+      margin-top: 8px;
+    }
+
+    .contact-card {
+      padding: 28px;
+      text-align: center;
+      border-color: rgba(249, 115, 22, 0.42);
+    }
+
+    .contact-card h2 {
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     footer {
-      text-align: center;
-      color: #aebfa7;
-      border: 1px solid var(--border);
-      background: rgba(6, 16, 8, 0.74);
-      border-radius: 18px;
       padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(6, 16, 8, 0.78);
+      color: #aebfa7;
+      text-align: center;
       font-size: 0.95rem;
     }
 
-    @media (max-width: 850px) {
-      header,
-      .hero,
-      .featured-grid,
-      .arcade-grid,
-      .media-card,
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
+    @media (max-width: 880px) {
       header {
         display: block;
       }
@@ -549,7 +573,16 @@
         margin-top: 14px;
       }
 
-      .projects {
+      .hero,
+      .featured-grid,
+      .arcade-grid,
+      .media-card,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contribution-grid,
+      .path-grid {
         grid-template-columns: 1fr;
       }
 
@@ -558,7 +591,11 @@
       }
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 540px) {
+      .page {
+        width: min(94%, 1120px);
+      }
+
       .skills-grid {
         grid-template-columns: 1fr;
       }
@@ -568,294 +605,531 @@
         min-height: 220px;
       }
 
-      .impact-stats {
-        grid-template-columns: 1fr;
+      .featured,
+      .panel,
+      .media-card,
+      .contact-card {
+        padding: 20px;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <header>
       <div>
         <div class="name">Jason Anderson</div>
-        <div class="subtitle">A3DWaffle • Computer Science Student • Web Developer • Game AI Scripter</div>
+
+        <div class="subtitle">
+          A3DWaffle • Software Developer • Web Developer • Game AI Contributor
+        </div>
       </div>
-      <nav>
-        <a href="#featured">Featured</a>
-        <a href="#web-project">Web Project</a>
-        <a href="#projects">Projects</a>
+
+      <nav aria-label="Main navigation">
+        <a href="#expanding-fronts">Expanding Fronts</a>
+        <a href="#quarter-quest">Quarter Quest</a>
         <a href="#skills">Skills</a>
         <a href="#interview">Interview</a>
         <a href="#about">About</a>
-        <a href="https://marketplace.visualstudio.com/items?itemName=A3DWaffle.ef-ai-tools" target="_blank">AI Tool</a>
-        <a href="https://github.com/A3DWaffle/Expanding-Fronts-AI" target="_blank">AI Repo</a>
-        <a href="mailto:JacekAnderson@gmail.com">Contact</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" aria-labelledby="hero-title">
         <div>
-          <span class="tagline">Web Development • RTS Game AI • Developer Tools</span>
-          <h1>I build practical software with a game-development edge.</h1>
-          <p>
-            I’m a Computer Science student who genuinely enjoys turning difficult problems into working software. I build responsive websites, ASP.NET Core applications, developer tools, and game AI systems, bringing the same curiosity and persistence to every project.
+          <span class="tagline">
+            Software Development • Web Development • Game AI
+          </span>
+
+          <h1 id="hero-title">
+            I Turn Curiosity About Games Into Practical Software.
+          </h1>
+
+          <p class="hero-copy">
+            I’m a Computer Science student with a 4.0 GPA and Dean’s List
+            recognition. I build web applications, programming tools, and
+            computer-player AI, combining technical problem-solving with a
+            lifelong interest in interactive software and game design.
           </p>
+
           <div class="buttons">
-            <a class="button primary" href="#featured">View Featured Work</a>
-            <a class="button secondary" href="https://github.com/A3DWaffle/Expanding-Fronts-AI" target="_blank">View AI Repository</a>
+            <a class="button primary" href="#expanding-fronts">
+              View Featured Work
+            </a>
+
+            <a class="button secondary" href="#about">
+              Read My Story
+            </a>
           </div>
         </div>
 
-        <aside class="hud-card">
+        <aside class="hud-card" aria-label="Jason Anderson profile summary">
           <div class="terminal">
-            <p class="command">&gt; boot_portfolio.exe</p>
-            <p class="ok">SYSTEM READY</p>
-            <p>Handle: A3DWaffle</p>
-            <p>Focus: Web development + RTS AI</p>
-            <p>Role: Student developer</p>
-            <p>Status: Open to software opportunities</p>
+            <p class="command">&gt; load_profile.exe</p>
+            <p class="ok">PROFILE READY</p>
+            <p>Education: B.S. Computer Science in progress</p>
+            <p>Academic Record: 4.0 GPA • Dean’s List</p>
+            <p>Project Experience: Web development + game AI</p>
+            <p>Status: Open to software and computer science opportunities</p>
           </div>
+
           <div class="skill-list">
-            <span>SWGB / Expanding Fronts AI Scripting</span>
-            <span>Rule-Based AI Logic</span>
-            <span>VS Code Extension Development</span>
-            <span>HTML, CSS, JavaScript &amp; ASP.NET Core</span>
+            <span>C#, C++, HTML, CSS, and JavaScript</span>
+            <span>ASP.NET Core MVC and Razor</span>
+            <span>Rule-Based Game AI</span>
+            <span>Developer Tools and Technical Documentation</span>
           </div>
         </aside>
       </section>
 
-      <section id="featured">
+      <section id="expanding-fronts">
         <div class="section-heading">
-          <p>Featured Project</p>
-          <h2>Expanding Fronts AI Tools</h2>
+          <p class="eyebrow">Flagship Work</p>
+          <h2>Expanding Fronts Development</h2>
+
+          <p class="section-intro">
+            What began as a love of modding Genie Engine games grew into
+            responsibility for the computer-player AI in a large,
+            community-created expansion.
+          </p>
         </div>
-        <div class="featured">
+
+        <article class="featured">
           <div class="featured-grid">
             <div>
-              <h3>Published VS Code extension for SWGB / EF AI scripting</h3>
+              <h3>Turning Strategy Into Computer-Player Behavior</h3>
+
               <p>
-                After working extensively with Expanding Fronts’ rule-based AI language, I saw that it lacked the modern editor support most programmers take for granted. I cataloged the language’s commands, arguments, and structure, then built and published a VS Code extension with syntax highlighting, IntelliSense, hover documentation, signature help, rule folding, an outline, and basic diagnostics.
+                Expanding Fronts is a fan-made expansion for Star Wars:
+                Galactic Battlegrounds, a real-time strategy game built on the
+                Genie Engine. I have always enjoyed modding games built on this
+                engine, especially their AI scripting systems.
               </p>
-              <div class="tech">
-                <span>VS Code Extension</span>
+
+              <p>
+                The AI uses a rule-based language with Lisp-like syntax—not
+                Lisp itself. Parenthesized commands such as <code>(defrule)</code>
+                combine conditions, operators, and actions to evaluate the game
+                state and control how the computer player responds.
+              </p>
+
+              <p>
+                I rewrote major parts of the AI and work on faction support,
+                military population logic, resource gathering, builder
+                behavior, technology advancement, and other strategic
+                decisions. I also created a C++ constants generator that reduces
+                repetitive work and manual errors in the scripts.
+              </p>
+
+              <p>
+                After learning the language in depth, I used JavaScript,
+                TypeScript, and JSON to build Expanding Fronts AI Tools. The
+                published VS Code extension catalogs the language and adds
+                syntax highlighting, IntelliSense, hover documentation,
+                signature help, rule folding, an outline, and basic diagnostics.
+              </p>
+
+              <div class="tech" aria-label="Expanding Fronts skills">
+                <span>Game AI</span>
+                <span>Rule-Based Scripting</span>
+                <span>Game Balance</span>
+                <span>Debugging</span>
+                <span>C++</span>
                 <span>JavaScript / TypeScript</span>
-                <span>JSON</span>
-                <span>Developer Tooling</span>
+                <span>Developer Tools</span>
               </div>
-              <a class="button primary" href="https://marketplace.visualstudio.com/items?itemName=A3DWaffle.ef-ai-tools" target="_blank">View Marketplace Page</a>
+
+              <div class="buttons">
+                <a
+                  class="button primary"
+                  href="https://www.moddb.com/mods/star-wars-galactic-battlegrounds-expanding-fronts"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Expanding Fronts on ModDB
+                </a>
+
+                <a
+                  class="button secondary"
+                  href="https://github.com/A3DWaffle/Expanding-Fronts-AI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View My AI Work
+                </a>
+
+                <a
+                  class="button secondary"
+                  href="https://marketplace.visualstudio.com/items?itemName=A3DWaffle.ef-ai-tools"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View VS Code Extension
+                </a>
+              </div>
             </div>
-            <div class="callout">
-              <p>&gt; analyzing script...</p>
-              <p>&gt; loading completions...</p>
-              <p>&gt; hover docs enabled</p>
-              <p>&gt; outline generated</p>
-              <p>&gt; diagnostics online</p>
+
+            <div class="callout" aria-label="Project progression">
+              <p class="accent">&gt; PLAYER OBSERVATION</p>
+              <p>Computer opponents needed improvement.</p>
+
+              <p class="accent">&gt; INDEPENDENT LEARNING</p>
+              <p>Mastered its Lisp-like, rule-based AI language.</p>
+
+              <p class="accent">&gt; PRACTICAL SOLUTION</p>
+              <p>Rewrote AI systems and automated repetitive work.</p>
+
+              <p class="accent">&gt; TEAM CONTRIBUTION</p>
+              <p>Now responsible for the mod’s computer-player AI scripting.</p>
             </div>
           </div>
+        </article>
+
+        <div class="contribution-grid">
+          <article class="card">
+            <span class="card-label">AI BEHAVIOR</span>
+            <h3>Improving Computer Opponents</h3>
+
+            <p>
+              I develop military decisions, resource gathering, population
+              management, technology advancement, builder behavior, and
+              faction-specific strategies so each opponent plays capably.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-label">DESIGN THINKING</span>
+            <h3>Balancing Challenge and Enjoyment</h3>
+
+            <p>
+              A technically correct system is not automatically fun. I test how
+              AI decisions affect the player’s experience and adjust behavior
+              when necessary.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-label">DEVELOPER TOOLING</span>
+            <h3>Making Scripts Easier to Maintain</h3>
+
+            <p>
+              I created a C++ constants generator and published a VS Code
+              extension with IntelliSense, hover documentation, signature help,
+              code folding, an outline, and basic diagnostics.
+            </p>
+          </article>
+        </div>
+
+        <div class="takeaway">
+          <strong>Takeaway:</strong>
+          This project shows how I approach unfamiliar systems: investigate the
+          problem, teach myself what I need, build a useful solution, test it,
+          and collaborate with other developers to improve it.
         </div>
       </section>
 
-      <section id="web-project">
+      <section id="quarter-quest">
         <div class="section-heading">
-          <p>Featured Web Project</p>
+          <p class="eyebrow">Featured Web Project</p>
           <h2>Quarter Quest Arcade</h2>
+
+          <p class="section-intro">
+            A multi-page arcade catalog that demonstrates my ability to combine
+            visual design, server-side organization, and browser interaction.
+          </p>
         </div>
-        <div class="featured arcade-feature">
+
+        <article class="featured arcade-feature">
           <div class="arcade-grid">
             <div>
-              <h3>A complete arcade-themed ASP.NET Core MVC application</h3>
+              <h3>
+                An Arcade-Themed Website Built With C# and ASP.NET Core
+              </h3>
+
               <p>
-                Quarter Quest Arcade is a 1990s-inspired ASP.NET Core MVC application built around six original fictional games. Visitors can browse, search, and sort the catalog, open game details, save favorites, and submit ratings. C# controllers prepare the game data and pass it to Razor views, which generate reusable HTML from a shared structure instead of duplicating every card by hand. JavaScript handles immediate browser interactions, while responsive CSS carries the arcade theme across screen sizes.
+                Quarter Quest Arcade is a 1990s-inspired website featuring six
+                original fictional games. Visitors can browse the catalog,
+                search and sort titles, open individual game pages, save
+                favorites, and submit ratings.
               </p>
-              <div class="tech">
+
+              <p>
+                C# and ASP.NET Core organize the game information and page
+                requests. Razor turns that information into reusable pages,
+                while JavaScript handles immediate interactions such as
+                searching and saved favorites.
+              </p>
+
+              <div class="tech" aria-label="Quarter Quest technologies">
                 <span>C#</span>
                 <span>ASP.NET Core MVC</span>
                 <span>Razor</span>
-                <span>HTML/CSS</span>
+                <span>HTML</span>
+                <span>CSS</span>
                 <span>JavaScript</span>
-                <span>Responsive Design</span>
               </div>
-              <p>The project demonstrates both application structure and visual design within one cohesive theme.</p>
+
               <div class="buttons">
-                <a class="button primary" href="projects/quarter-quest.html">Explore Project</a>
-                <a class="button secondary" href="downloads/QuarterQuestArcade-source.zip" download>Download Source</a>
+                <a class="button primary" href="quarter-quest.html">
+                  Explore the Project
+                </a>
+
+                <a
+                  class="button secondary"
+                  href="QuarterQuestArcade-source.zip"
+                  download
+                >
+                  Download Source
+                </a>
               </div>
             </div>
-            <a class="arcade-preview" href="projects/quarter-quest.html" aria-label="Open the Quarter Quest Arcade case study">
-              <img src="assets/quarter-quest/arcade-banner.png" alt="Quarter Quest Arcade artwork with a neon arcade cabinet" />
+
+            <a
+              class="arcade-preview"
+              href="quarter-quest.html"
+              aria-label="Explore the Quarter Quest Arcade project"
+            >
+              <img
+                src="arcade-banner.png"
+                alt="Quarter Quest Arcade artwork featuring a neon arcade cabinet"
+              />
             </a>
           </div>
-        </div>
-      </section>
+        </article>
 
-      <section id="projects">
-        <div class="section-heading">
-          <p>Projects</p>
-          <h2>Selected Work</h2>
-        </div>
-
-        <div class="projects">
-          <article class="project-card">
-            <h3>Expanding Fronts AI Tools</h3>
-            <div class="project-type">Published Visual Studio Code Extension</div>
-            <p>
-              A Visual Studio Code extension for Star Wars: Galactic Battlegrounds and Expanding Fronts AI scripting. It improves the scripting workflow with editor support designed for the mod’s AI files.
-            </p>
-            <div class="tech">
-              <span>VS Code Extension</span>
-              <span>JSON</span>
-              <span>AI Scripting</span>
-              <span>Tooling</span>
-            </div>
-            <a href="https://marketplace.visualstudio.com/items?itemName=A3DWaffle.ef-ai-tools" target="_blank">View extension</a>
-          </article>
-
-          <article class="project-card">
-            <h3>Expanding Fronts AI Scripting</h3>
-            <div class="project-type">RTS AI / Modding Project</div>
-            <p>
-              I handle the computer-player AI scripting for Expanding Fronts, a major fan-made expansion for the Genie Engine strategy game Star Wars: Galactic Battlegrounds. Its parenthesized, rule-based language has Lisp-like qualities: conditions and operators evaluate game state, then actions tell the AI how to respond. I use it to shape resource gathering, military decisions, technology advancement, upgrades, and distinct faction behavior, supported by documentation and a C++ constants generator.
-            </p>
-            <div class="tech">
-              <span>RTS AI</span>
-              <span>Rule-Based Logic</span>
-              <span>Game Balance</span>
-              <span>Documentation</span>
-            </div>
-            <div class="impact-stats" aria-label="Expanding Fronts community statistics">
-              <div class="impact-stat">
-                <strong class="count-up" data-target="1656476" data-format="compact">0</strong>
-                <span>Mod DB visits</span>
-              </div>
-              <div class="impact-stat">
-                <strong class="count-up" data-target="20900" data-format="compact">0</strong>
-                <span>latest release downloads</span>
-              </div>
-              <div class="impact-stat">
-                <strong>9.5/10</strong>
-                <span>community rating</span>
-              </div>
-            </div>
-            <p class="stat-note">Public Mod DB figures viewed September 2026.</p>
-            <a href="https://github.com/A3DWaffle/Expanding-Fronts-AI" target="_blank" rel="noopener noreferrer">View repository</a>
-            &nbsp;•&nbsp;
-            <a href="https://www.moddb.com/mods/star-wars-galactic-battlegrounds-expanding-fronts" target="_blank" rel="noopener noreferrer">View Expanding Fronts on Mod DB</a>
-          </article>
+        <div class="takeaway">
+          <strong>Takeaway:</strong>
+          Quarter Quest demonstrates that I can plan a visual identity, organize
+          a multi-page application, and build features that respond clearly to
+          user actions.
         </div>
       </section>
 
       <section id="skills">
         <div class="section-heading">
-          <p>Capabilities</p>
-          <h2>Web &amp; Development Skills</h2>
+          <p class="eyebrow">Capabilities</p>
+          <h2>What I Build With</h2>
         </div>
+
         <div class="skills-grid">
-          <article class="skill-card">
+          <article class="card skill-card">
             <h3>Front End</h3>
-            <p>Semantic HTML, responsive CSS, JavaScript, accessible layouts, and clear visual hierarchy.</p>
+
+            <p>
+              HTML, CSS, and JavaScript for accessible layouts, responsive
+              pages, navigation, and browser-based interaction.
+            </p>
           </article>
-          <article class="skill-card">
+
+          <article class="card skill-card">
             <h3>Back End</h3>
-            <p>C#, .NET, ASP.NET Core MVC, Razor views, routing, models, and basic API development.</p>
+
+            <p>
+              C# and ASP.NET Core MVC for organizing application logic,
+              processing requests, and connecting data to pages.
+            </p>
           </article>
-          <article class="skill-card">
-            <h3>Data</h3>
-            <p>SQL Server, relational database design, queries, joins, constraints, and analytical functions.</p>
+
+          <article class="card skill-card">
+            <h3>Programming and Data</h3>
+
+            <p>
+              Experience with C++, C#, SQL Server, data organization,
+              problem-solving, and object-oriented programming.
+            </p>
           </article>
-          <article class="skill-card">
-            <h3>Tooling</h3>
-            <p>GitHub, Visual Studio, VS Code extension development, debugging, documentation, and testing.</p>
+
+          <article class="card skill-card">
+            <h3>Development Tools</h3>
+
+            <p>
+              GitHub, Visual Studio, VS Code, debugging, documentation, and
+              building tools that improve a development workflow.
+            </p>
           </article>
         </div>
       </section>
 
       <section id="interview">
         <div class="section-heading">
-          <p>Featured Media</p>
+          <p class="eyebrow">Featured Media</p>
           <h2>Developer Interview</h2>
         </div>
-        <div class="media-card">
+
+        <article class="media-card">
           <div class="video-wrap">
             <iframe
               src="https://www.youtube-nocookie.com/embed/nD-_cIX9Djw"
-              title="Developer interview with Jason Anderson"
+              title="Jason Anderson discussing Expanding Fronts development"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen>
-            </iframe>
+              allowfullscreen
+            ></iframe>
           </div>
+
           <div class="media-copy">
-            <div class="eyebrow">Star Wars Gaming Roundtable</div>
-            <h3>Discussing Expanding Fronts development</h3>
+            <p class="eyebrow">Star Wars Gaming Roundtable</p>
+            <h3>Discussing Expanding Fronts Development</h3>
+
             <p>
-              In this roundtable, I represent Expanding Fronts and talk about the mod, my role developing its computer-player AI, and the work involved in expanding a classic real-time strategy game.
+              I joined this community roundtable as a representative of
+              Expanding Fronts. The conversation covers the project, my work on
+              computer-player AI, and the continued development of a classic
+              real-time strategy game.
             </p>
-            <a class="button secondary" href="https://www.youtube.com/watch?v=nD-_cIX9Djw" target="_blank" rel="noopener noreferrer">Open on YouTube</a>
+
+            <a
+              class="button secondary"
+              href="https://www.youtube.com/watch?v=nD-_cIX9Djw"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open on YouTube
+            </a>
           </div>
-        </div>
+        </article>
       </section>
 
       <section id="about">
         <div class="section-heading">
-          <p>About</p>
-          <h2>About Me</h2>
+          <p class="eyebrow">Background</p>
+          <h2>From Curiosity to Contribution</h2>
         </div>
 
         <div class="about-grid">
-          <div class="panel">
+          <article class="panel">
+            <h3>About Me</h3>
+
             <p>
-              I’ve loved programming since I first became interested in making games. I especially enjoy modding Genie Engine strategy games and working with their Lisp-like, rule-based AI scripting language. That interest grew into responsibility for Expanding Fronts’ computer-player AI and inspired me to publish tools that make the language easier for other developers to use. Alongside that work, I build responsive websites and ASP.NET Core applications while completing my Computer Science degree. I’m looking for an opportunity to contribute, learn from experienced developers, and keep growing into greater responsibility.
+              My interest in software began during the Nintendo 64 era. I was
+              fascinated by how games brought together technology, visual
+              design, computer-controlled opponents, changing environments,
+              voice acting, and storytelling to create an experience.
             </p>
-          </div>
-          <div class="panel">
-            <h3>Areas of Focus</h3>
+
+            <p>
+              In high school, I taught myself C++ and became co-president of the
+              robotics club, where I was responsible for software development
+              and helped prepare LEGO Mindstorms robots for competitions.
+            </p>
+
+            <p>
+              I also worked with my school’s Apple iPad Initiative as it moved
+              toward paperless classrooms. I provided help-desk support,
+              troubleshot devices, and assisted students and staff with their
+              technology.
+            </p>
+
+            <p>
+              I am now pursuing a bachelor’s degree in Computer Science with a
+              4.0 GPA and Dean’s List recognition. I’m open to web development,
+              software development, game development, and other programming or
+              computer science opportunities.
+            </p>
+          </article>
+
+          <aside class="panel">
+            <h3>What I Bring</h3>
+
             <ul>
-              <li>Responsive front-end web development</li>
-              <li>ASP.NET Core MVC applications</li>
-              <li>Real-time strategy game AI scripting</li>
-              <li>Developer tools for AI scripting</li>
+              <li>A willingness to investigate unfamiliar systems</li>
+              <li>Experience teaching myself new languages and tools</li>
+              <li>Programming and troubleshooting experience</li>
+              <li>An understanding of both technical behavior and user experience</li>
+              <li>Experience contributing to a long-running team project</li>
+              <li>Clear technical writing and documentation</li>
             </ul>
+          </aside>
+        </div>
+
+        <div class="path-grid">
+          <article class="card">
+            <span class="card-label">EARLY EXPERIENCE</span>
+            <h3>Robotics and Technical Support</h3>
+
+            <p>
+              Programming robots and supporting school technology taught me to
+              diagnose problems, communicate with users, and take responsibility
+              for working systems.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-label">CURRENT EDUCATION</span>
+            <h3>Computer Science</h3>
+
+            <p>
+              My degree work continues to strengthen my programming, web
+              development, database, software-design, and problem-solving
+              foundations.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-label">PRACTICAL EXPERIENCE</span>
+            <h3>Projects With Real Users</h3>
+
+            <p>
+              My game AI, published VS Code extension, and web projects give me
+              experience taking ideas beyond coursework and turning them into
+              software other people can use.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact-card">
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s Build Something Useful.</h2>
+
+          <p>
+            I’m interested in software development, web development, game
+            development, and other programming or computer science
+            opportunities.
+          </p>
+
+          <div class="buttons" style="justify-content: center;">
+            <a
+              class="button primary"
+              href="mailto:JacekAnderson@gmail.com"
+            >
+              Email Me
+            </a>
+
+            <a
+              class="button secondary"
+              href="https://github.com/A3DWaffle"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View GitHub
+            </a>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>Jason Anderson • A3DWaffle • Computer Science Student</p>
-      <p>Email: <a href="mailto:JacekAnderson@gmail.com">JacekAnderson@gmail.com</a></p>
+      <p>
+        © <span id="current-year">2026</span>
+        Jason Anderson • A3DWaffle
+      </p>
+
+      <p>
+        <a href="mailto:JacekAnderson@gmail.com">
+          JacekAnderson@gmail.com
+        </a>
+      </p>
     </footer>
   </div>
+
   <script>
-    const counters = document.querySelectorAll(".count-up");
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const formatCounter = (value, compact) => new Intl.NumberFormat("en-US", {
-      notation: compact ? "compact" : "standard",
-      maximumFractionDigits: compact ? 1 : 0
-    }).format(value) + "+";
-
-    counters.forEach((counter) => {
-      const target = Number(counter.dataset.target);
-      const compact = counter.dataset.format === "compact";
-
-      if (reduceMotion) {
-        counter.textContent = formatCounter(target, compact);
-        return;
-      }
-
-      const startedAt = performance.now();
-      const duration = 1200;
-      const update = (now) => {
-        const progress = Math.min((now - startedAt) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        counter.textContent = formatCounter(Math.floor(target * eased), compact);
-        if (progress < 1) requestAnimationFrame(update);
-      };
-
-      requestAnimationFrame(update);
-    });
+    const yearElement = document.querySelector("#current-year");
+    yearElement.textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
